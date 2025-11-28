@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+</head>
+<body>
+    <header>
+        <audio id="bgmAudio" loop>
+            <source src="/music/bgm.mp3" type="audio/mp3" />
+        </audio>
+
+        <!-- 음악 컨트롤러 -->
+        <button class="bgm_btn" aria-label="배경음악 재생/정지">
+            <div class="eq-bars">
+                <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="pause-icon">Ⅱ</div>
+        </button>
+    </header>
+
+    <!-- s: main -->
+    <main id="main" class="main">
+
+        <!-- s: section01 -->
+        <section id="section01" class="section section01">
+            <div class="inner">
+                <div class="img_box">
+                    <!-- <img src="" alt="이미지1"> -->
+                </div>
+                <div class="text_box">
+                    <h1 class="title">
+                        the Title<br>
+                        Area
+                    </h1>
+                    <p class="desc">
+                        Love is patient, love is kind. It does not envy,<br> 
+                        it does not boast, it is not proud.<br>
+                        It does not dishonor others, it is not self-seeking,<br>
+                        it is not easily angered, it keeps no record of wrongs.
+                    </p>
+                    <p class="date">05/25/2025</p>
+                </div>
+            </div>
+        </section>
+        <!-- e: section01 -->
+
+        <!-- s: section02 -->
+        <section id="section02" class="section section02">
+            <div class="inner">
+                <!-- <h2 class="title">SubTitle</h2> -->
+                <p class="desc">
+                    Dear friends, let us love one another, for love comes from God. Everyone who loves has been born of God and knows God. Whoever does not love does not know God, because God is love.
+                </p>
+                <div class="img_box">
+                    <!-- <img src="" alt="이미지1"> -->
+                </div>
+                <div class="calendar">
+                    <div class="calendar_header">
+                        <h2 class="calendar_date">2026.06.06</h2>
+                        <p class="calendar_sub-date">Saturday PM 15:00</p>
+                        <!-- <hr/> -->
+                    </div>
+
+                    <table class="calendar_table">
+                        <thead>
+                            <tr>
+                                <th>Sun</th><th>Mon</th><th>The</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendar_body"></tbody>
+                    </table>
+                    <p class="calendar_spot">
+                        The Partyum 7F Rafore Hall
+                    </p>
+                    <p class="calendar_dday">
+                        <strong>juye</strong>nam at <strong id="calendar_count"></strong>
+                    </p>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- e: section02 -->
+
+        <!-- s: section03 -->
+        <!-- <section id="section03" class="section section03">
+            <div class="inner">
+
+                <div class="marquee" data-duration="20">
+                    <div class="marquee_wrap">
+                        <p class="marquee_text">
+                            Whereas disregard and contempt for human rights have resulted
+                        </p>
+                    </div>
+                </div>
+
+                <div class="marquee" data-duration="18">
+                    <div class="marquee_wrap">
+                        <p class="marquee_text">
+                            Whereas disregard and contempt for human rights have resulted
+                        </p>
+                    </div>
+                </div>
+
+                <div class="img_box">
+                    <img src="" alt="이미지2"> 
+                </div>
+            </div>
+        </section> -->
+        <!-- e: section03 -->
+
+        <!-- s: section04 -->
+        <section id="section04" class="section section04">
+            <div class="inner">
+                <div class="plan">
+                    <p class="tit">Timeline</p>
+                    <ul class="plan_list">
+                        <li class="plan_item">
+                            <div class="plan_icon">
+                                <i class="icon icon01">
+                                    <img src="/img/plan_item_icon_01.svg">
+                                </i>
+                                <span class="time">14:40</span>
+                            </div>
+                            <div class="plan_text">
+                                <p class="plan_tit">Photo Booth</p>
+                                <p class="desc">
+                                    We have a photo booth ready.<br>
+                                    Leave memories with people you<br>
+                                    haven't met in a long time.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="plan_item">
+                            <div class="plan_icon">
+                                <i class="icon icon02">
+                                    <img src="/img/plan_item_icon_02.svg">
+                                </i>
+                                <span class="time">15:00</span>
+                            </div>
+                            <div class="plan_text">
+                                <p class="plan_tit">Wedding Ceremony</p>
+                                <p class="desc">
+                                    Please congratulate us<br>
+                                    on our wedding
+                                </p>
+                            </div>
+                        </li>
+                        <li class="plan_item">
+                            <div class="plan_icon">
+                                <i class="icon icon03">
+                                    <img src="/img/plan_item_icon_03.svg">
+                                </i>
+                                <span class="time">15:40</span>
+                            </div>
+                            <div class="plan_text">
+                                <p class="plan_tit">Wedding Reception</p>
+                                <p class="desc">
+                                    Thank you for congratulating us<br>
+                                    on our wedding.<br>
+                                    We prepared a feast, so enjoy it
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- e: section04 -->
+
+        <!-- s: section05 -->
+        <section id="section05" class="section section05">
+            <div class="inner">
+                <div class="contact">
+                    <p class="tit">Contact</p>
+                    <div class="contact_wrap">
+                        <ul class="contact_list bride">
+                            <li class="contact_item">
+                                <p class="role">Groom</p>
+                                <p class="name">Huckju</p>
+                                <div class="contact_icon">
+                                    <a href="tel:010-5119-5745" title="에게 전화걸기">
+                                        <i class="icon icon01">
+                                            <img src="/img/contact_item_icon_01.svg">
+                                        </i>
+                                    </a>
+                                    <a href="sms:01051195745?body=축하합니다." title="에게 메세지 보내기">
+                                        <i class="icon icon02">
+                                            <img src="/img/contact_item_icon_02.svg">
+                                        </i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="contact_item">
+                                <p class="role">Bride</p>
+                                <p class="name">Yelly</p>
+                                <div class="contact_icon">
+                                    <a href="tel:010-5119-5745" title="에게 전화걸기">
+                                        <i class="icon icon01">
+                                            <img src="/img/contact_item_icon_01.svg">
+                                        </i>
+                                    </a>
+                                    <a href="sms:01012341234?body=축하합니다." title="에게 메세지 보내기">
+                                        <i class="icon icon02">
+                                            <img src="/img/contact_item_icon_02.svg">
+                                        </i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="contact_list parent">
+                            <li class="contact_item">
+                                <p class="role">Father</p>
+                                <p class="name">Sugil</p>
+                                <div class="contact_icon">
+                                    <a href="tel:010-5119-5745" title="에게 전화걸기">
+                                        <i class="icon icon01">
+                                            <img src="/img/contact_item_icon_01.svg">
+                                        </i>
+                                    </a>
+                                    <a href="sms:01012341234?body=축하합니다." title="에게 메세지 보내기">
+                                        <i class="icon icon02">
+                                            <img src="/img/contact_item_icon_02.svg">
+                                        </i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="contact_item">
+                                <p class="role">Father</p>
+                                <p class="name">Suckjo</p>
+                                <div class="contact_icon">
+                                    <a href="tel:010-5119-5745" title="에게 전화걸기">
+                                        <i class="icon icon01">
+                                            <img src="/img/contact_item_icon_01.svg">
+                                        </i>
+                                    </a>
+                                    <a href="sms:01012341234?body=축하합니다." title="에게 메세지 보내기">
+                                        <i class="icon icon02">
+                                            <img src="/img/contact_item_icon_02.svg">
+                                        </i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="contact_item">
+                                <p class="role">mother</p>
+                                <p class="name">Sinhwa</p>
+                                <div class="contact_icon">
+                                    <a href="tel:010-5119-5745" title="에게 전화걸기">
+                                        <i class="icon icon01">
+                                            <img src="/img/contact_item_icon_01.svg">
+                                        </i>
+                                    </a>
+                                    <a href="sms:01012341234?body=축하합니다." title="에게 메세지 보내기">
+                                        <i class="icon icon02">
+                                            <img src="/img/contact_item_icon_02.svg">
+                                        </i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="contact_item">
+                                <p class="role">Father</p>
+                                <p class="name">Jungjae</p>
+                                <div class="contact_icon">
+                                    <a href="tel:010-5119-5745" title="에게 전화걸기">
+                                        <i class="icon icon01">
+                                            <img src="/img/contact_item_icon_01.svg">
+                                        </i>
+                                    </a>
+                                    <a href="sms:01012341234?body=축하합니다." title="에게 메세지 보내기">
+                                        <i class="icon icon02">
+                                            <img src="/img/contact_item_icon_02.svg">
+                                        </i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- e: section05 -->
+
+        <!-- s: section06 -->
+        <section id="section06" class="section section06">
+            <div class="inner">
+                <div class="gallery">
+                    <p class="tit">Gallery</p>
+                    <p class="disc">If you click on the picture, you can see it big.</p>
+                    <div class="swiper swiper-container gallery_swiper">
+                        <ul class="swiper-wrapper gallery_list">
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                            <li class="swiper-slide gallery_item">
+                                <a href="javascript:;" class="swiper_btn"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- e: section06 -->
+
+        <!-- s: section07 -->
+        <section id="section07" class="section section07">
+            <div class="inner">
+                <div class="location">
+                    <p class="tit">Location</p>
+                    <p class="sub_tit">The Partyum Anyang 7F Rafore Hall</p>
+                    <p class="disc">311, Simin-daero, Dongan-gu, Anyang-si, Gyeonggi-do</p>
+                    <div class="btn_wrap btn_wrap01">
+                        <button title="복사하기" class="location_btn btn--copy" data-copy="311, Simin-daero, Dongan-gu, Anyang-si, Gyeonggi-do">
+                            <img src="/img/location_btn_icon_01.svg" class="btn_icon btn_icon01">
+                            <span class="btn_txt">Copy</span>
+                        </button>
+                        <a href="tel:031-731-5000" title="전화걸기" class="location_btn btn--link">
+                            <img src="/img/location_btn_icon_02.svg" class="btn_icon btn_icon02">
+                            <span class="btn_txt">Call</span>
+                        </a>
+                    </div>
+                    <div class="map">
+
+                    </div>
+                    <div class="btn_wrap btn_wrap02">
+                        <a href="" title="T맵 열기" class="location_btn location_btn--white btn--link">
+                            <img src="/img/location_btn_icon_t.svg" class="btn_icon btn_icon01">
+                            <span class="btn_txt">T Map</span>
+                        </a>
+                        <!-- <a href="" title="Kakao맵 열기" class="btn btn--white btn--link">
+                            <img src="/img/location_btn_icon_02.svg" class="btn_icon btn_icon02">
+                            <span class="btn_txt">Kakao Map</span>
+                        </a> -->
+                        <a href="" title="Naver지도 열기" class="location_btn location_btn--white btn--link">
+                            <img src="/img/location_btn_icon_naver.png" class="btn_icon btn_icon02">
+                            <span class="btn_txt">Naver Map</span>
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="info_tit">
+                            <img src="/img/location_info_icon.svg" class="info_icon">    
+                            Parking Notice
+                        </p>
+                        <p class="info_desc">
+                            Parking in this building is small<br>
+                            according to the parking instructions<br>
+                            Please use parking lots 1, 2, and 3.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- e: section07 -->
+
+        <!-- s: section08 -->
+        <section id="section08" class="section section08">
+            <div class="inner">
+                <div class="present">
+                    <p class="tit">Present</p>
+                    <p class="sub_tit">
+                        I wrote it down for those who have difficulty attending.<br>
+                        I ask for your understanding with a generous heart.
+                    </p>
+                </div>
+                <div class="present_wrap">
+                    <div class="present_cont groom">
+                        <a href="javascript:;" class="present_btn present_btn--link" title="groom's side open">
+                            The Groom's side
+                            <img src="/img/present_btn_arrow.svg" class="present_icon">
+                        </a>
+                        <ul class="present_list">
+                            <li class="present_item">
+                                <dl class="present_info">
+                                    <div>
+                                        <dt class="present_role">groom</dt> 
+                                        <dd class="present_name">Hyukju Lee</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="present_bank">Toss</dt> 
+                                        <dd class="present_num">123-4567-8910</dd>
+                                    </div>
+                                </dl>
+                                <button class="present_btn--copy btn--copy" title="groom's side open" data-copy="123-4567-8910">
+                                    <img src="/img/present_btn_copy.svg" class="present_icon--copy">
+                                    복사하기
+                                </button>
+                            </li>
+                            <li class="present_item">
+                                <dl class="present_info">
+                                    <div>
+                                        <dt class="present_role">father</dt> 
+                                        <dd class="present_name">sugil Lee</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="present_bank">Toss</dt> 
+                                        <dd class="present_num">123-4567-8910</dd>
+                                    </div>
+                                </dl>
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
+                                    <img src="/img/present_btn_copy.svg" class="present_icon--copy" >
+                                    복사하기
+                                </button>
+                            </li>
+                            <li class="present_item">
+                                <dl class="present_info">
+                                    <div>
+                                        <dt class="present_role">mother</dt> 
+                                        <dd class="present_name">hwashin kang</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="present_bank">Toss</dt> 
+                                        <dd class="present_num">123-4567-8910</dd>
+                                    </div>
+                                </dl>
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
+                                    <img src="/img/present_btn_copy.svg" class="present_icon--copy">
+                                    복사하기
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="present_cont bride">
+                        <a href="javascript:;" class="present_btn present_btn--link" title="groom's side open">
+                            The bride's side
+                            <img src="/img/present_btn_arrow.svg" class="present_icon">
+                        </a>
+                        <ul class="present_list">
+                            <li class="present_item">
+                                <dl class="present_info">
+                                    <div>
+                                        <dt class="present_role">bride</dt> 
+                                        <dd class="present_name">Eunye Lee</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="present_bank">Toss</dt> 
+                                        <dd class="present_num">123-4567-8910</dd>
+                                    </div>
+                                </dl>
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
+                                    <img src="/img/present_btn_copy.svg" class="present_icon--copy">
+                                    복사하기
+                                </button>
+                            </li>
+                            <li class="present_item">
+                                <dl class="present_info">
+                                    <div>
+                                        <dt class="present_role">father</dt> 
+                                        <dd class="present_name">Jongsu Lee</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="present_bank">Toss</dt> 
+                                        <dd class="present_num">123-4567-8910</dd>
+                                    </div>
+                                </dl>
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
+                                    <img src="/img/present_btn_copy.svg" class="present_icon--copy">
+                                    복사하기
+                                </button>
+                            </li>
+                            <li class="present_item">
+                                <dl class="present_info">
+                                    <div>
+                                        <dt class="present_role">mother</dt> 
+                                        <dd class="present_name">jaejung che</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="present_bank">Toss</dt> 
+                                        <dd class="present_num">123-4567-8910</dd>
+                                    </div>
+                                </dl>
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
+                                    <img src="/img/present_btn_copy.svg" class="present_icon--copy">
+                                    복사하기
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- e: section08 -->
+
+        <!-- s: section09 -->
+        <section id="section09" class="section section09">
+            <div class="inner">
+                <div class="information">
+                    <p class="tit">Information</p>
+                    <p class="desc">
+                        I wrote it down for those who have difficulty attending.<br>
+                        I ask for your understanding with a generous heart.<br>
+                        I wrote it down for those who have difficulty attending.<br>
+                        I ask for your understanding with a generous heart.<br>
+                        I wrote it down for those who have difficulty attending.<br>
+                        I ask for your understanding with a generous heart.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- e: section09 -->
+
+        
+        <!-- s: section10 -->
+        <section id="section10" class="section section10">
+            <div class="inner">
+                <div class="thank">
+                    <p class="desc">
+                        thank you
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- e: section10 -->
+    </main>
+    <!-- e: main -->
+
+    <!-- s: footer -->
+    <footer class="footer">
+        <div class="footer_btn_wrap">
+            <a href="javascript:;" class="footer_btn btn--link">Share</a>
+            <a href="javascript:;" class="footer_btn btn--copy" data-copy="link Copy">link Copy</a>
+            <a 
+            href="https://www.google.com/calendar/render?action=TEMPLATE&text=예은%20결혼&dates=20260606T150000/20260606T170000&ctz=Asia/Seoul&location=더파티움안양%207층라포레홀."
+            target="_blank" class="footer_btn btn--share">
+                <i class="fa-brands fa-google"></i>
+                <span>구글 캘린더에 일정 추가</span>
+            </a>
+        </div>
+    </footer>
+    <!-- e: footer -->
+
+    <!-- s: toast copy -->
+    <div class="toast" id="toastCopy">
+        <p class="toast_txt">
+            <img src="/img/toast_check_icon.svg" class="toast_icon">
+            <span>복사가 완료되었습니다.</span>
+        </p>
+    </div>
+    <!-- e: toast copy-->
+
+    <!-- s: toast music -->
+    <div class="toast toast--music">
+        <p class="toast_txt">
+            <span>배경음악이 준비되어 있습니다.</span>
+        </p>
+    </div>
+    <!-- e: toast music-->
+
+    <!-- s: gallery modal -->
+    <div class="section06_modal">
+        <button class="modal_close_btn">
+            <img src="/img/modal_close_icon.svg" class="modal_close_icon">
+        </button>
+        <div class="swiper swiper-container gallery_modal_swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+                <li class="swiper-slide"></li>
+            </ul>
+        </div>
+        <div class="modal_control_box">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- e: gallery modal -->
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script src="/js/common.js"></script>
+
+</html>

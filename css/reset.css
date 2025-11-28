@@ -1,0 +1,136 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, button,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+a, button {
+	text-decoration: none;
+	color: #000000;
+	border: none;
+	cursor: pointer;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* add */
+body {
+    min-height: 100vh;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
+}
+.section {
+	box-sizing: border-box;
+	text-align: center;
+}
+.inner {
+    width: 100%;
+    padding: 0 24px;
+}
+img {
+	width: 100%;
+}
+.toast {
+	position: fixed;
+	left: 50%;
+	bottom: 70px;
+	z-index: 9999;
+	display: none;
+	padding: 20px 24px;
+	background: rgba(52, 78, 60, 0.35);
+	border-radius: 10px;
+	transform: translateX(-50%);
+	animation: toastFade 1.6s ease;
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+}
+.toast_txt{
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	padding: 10px 24px;
+	font-size: 20px;
+	color: #444444;
+	background: rgba(255, 255, 255, 0.65);
+	border-radius: 10px;
+}
+.toast_icon {
+	width: 24px;
+}
+
+.toast--music {
+	position: fixed;
+	left: 50%;
+	bottom: auto;
+	top: 20px;
+	z-index: 9999;
+	display: none;
+	padding: 10px 24px;
+	background: rgba(0, 0, 0, 0.65);
+	border-radius: 50px;
+	transform: translateX(-50%);
+	animation: toastFadeReverse 1.6s ease;
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+}
+.toast--music .toast_txt{
+	padding: 0 0;
+	font-size: 20px;
+	color: #fff;
+	background: none;;
+}
+@keyframes toastFade {
+	0%   { opacity: 0; transform: translate(-50%, 20px); }
+	15%  { opacity: 1; transform: translate(-50%, 0px); }
+	85%  { opacity: 1; transform: translate(-50%, 0px); }
+	100% { opacity: 0; transform: translate(-50%, 20px); }
+}
+@keyframes toastFadeReverse {
+	0%   { opacity: 0; transform: translate(-50%, 0px); }
+	15%  { opacity: 1; transform: translate(-50%, 20px); }
+	85%  { opacity: 1; transform: translate(-50%, 20px); }
+	100% { opacity: 0; transform: translate(-50%, 00px); }
+}

@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const ddayText = document.getElementById("calendar_count");
     if (dday > 0) {
-        ddayText.textContent = `${dday}at namatsutnida.`;
+        ddayText.textContent = `${dday}`;
     } else if (dday === 0) {
-        ddayText.textContent = `Today is day 💐`;
+        ddayText.textContent = `오늘입니다. 💐`;
     } else {
-        ddayText.textContent = `Jinat sathu day.`;
+        ddayText.textContent = `지났습니다.`;
     }
 
     // 📅 달력 생성 (2026년 6월)

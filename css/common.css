@@ -68,9 +68,9 @@ header {
     color: #242424;
 }
 .section .disc {
-    /* margin-bottom: 47px;
-    font-size: 24px;
-    color: #4A4A4A; */
+    margin: 0.7rem 0 2.7rem;
+    font-size: 1.125rem;
+    /* color: #4A4A4A;  */
 }
 
 
@@ -371,38 +371,45 @@ header {
 
 /* s: section06 */
 .section06 {
-    padding: 160px 0;
+    padding: 6.25rem 0 6.25rem;
+    background-color: #ffffff;
 }
 .section06 .tit {
-    margin-bottom: 47px;
+    margin-bottom: 0;
+    font-family: 'Castoro Titling';
 }
 .section06 .gallery_swiper {
-    width: 490px;
-    height: 653px;
+    max-width: 19.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.section06 .gallery_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .section06 .gallery_swiper .swiper_btn {
     width: 100%;
     height: 100%;
 }
-.section06 .gallery_item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    background-color: #4A4A4A;
+.section06 .gallery_swiper img {
+    width: 100%;
+    border-radius: 10px;
     overflow: hidden;
 }
-
 .section06_modal {
     position: fixed;
     left: 50%;
     top: 0;
     z-index: 9999;
     display: none;
-    max-width: 700px;
+	max-width: 28rem;
     width: 100%;
     height: 100vh;
-    padding: 70px 24px;
+    padding: 3rem 0 3.75rem;
 	background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(6px);
 	-webkit-backdrop-filter: blur(6px);
@@ -410,7 +417,7 @@ header {
 }
 .section06_modal .gallery_modal_swiper {
     width: 100%;
-    height: 100%;
+    height: 100%; 
 }
 .section06_modal .gallery_modal_swiper .swiper-slide {
     display: flex;
@@ -418,7 +425,6 @@ header {
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #f2f2f2;
 }
 .section06_modal .modal_close_btn {
     position: absolute;
@@ -427,27 +433,28 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
+    width: 1.5rem;
+    background: transparent;
+    opacity: 0.6;
 }
 .section06_modal .modal_control_box {
     position: absolute;
     left: 50%;
-    bottom: 30px;
+    bottom: 2.5rem;
     width: 100%;
     transform: translateX(-50%);
 }
 .section06_modal .modal_control_box .swiper-button-next,
 .section06_modal .modal_control_box .swiper-button-prev {
+    z-index: 11;
     top: 50%;
-    color: #000000;
+    color: #444444;
     margin-top: 0;
     transform: translateY(-50%);
 }
 .section06_modal .modal_control_box .swiper-button-next svg,
 .section06_modal .modal_control_box .swiper-button-prev svg {
-    height: 80%;
+    height: 1.3rem;
 }
 .section06_modal .swiper-pagination {
     top: 50%;
@@ -456,14 +463,19 @@ header {
     transform: translateY(-50%);
 }
 .section06_modal .swiper-pagination > span {
-    font-size: 20px;
+    font-size: 1em;
 }
 /* e: section06 */
 
 /* s: section07 */
-.section07 {
+.section07{
     position: relative;
-    padding: 100px 0;
+    padding: 6.25rem 0 6.25rem;
+    background-color: #ffffff;
+}
+.section07 .tit {
+    margin-bottom: 0;
+    font-family: 'Castoro Titling';
 }
 .section07::after {
     content: "";
@@ -472,36 +484,32 @@ header {
     bottom: -1px;
     width: 171px;
     height: 1px;
-    background-color: #dfdfdf;
+    background-color: #bcbcbc;
     transform: translateX(-50%);
 }
-.section07 .tit {
-    margin-bottom: 47px;
-}
-.section07 .sub_tit {
-    font-size: 24px;
-    line-height: 43px;
-    color: #4A4A4A;
-}
 .section07 .disc {
-    font-size: 20px;
-    line-height: 32px;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+.section07 .disc small {
+    font-size: 1.125rem;
+    color: #4A4A4A;
 }
 .section07 .btn_wrap {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 47px;
-    margin-bottom: 47px;
+    justify-content: space-between;
+    margin-bottom: 2.7rem;
 }
 .section07 .location_btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 186px;
-    height: 60px;
-    font-size: 24px;
+    width: 48%;
+    height: 50px;
+    font-size: 1.125rem;
     color: #ffffff;
     background-color: #344E3C;
     border-radius: 7px;

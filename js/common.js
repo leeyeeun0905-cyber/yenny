@@ -68,7 +68,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //gallery swiper
     var gallerySwiper = new Swiper(".gallery_swiper", {
         effect: "cards",
-        grabCursor: true,
+        cardsEffect: {
+            // perSlideRotate 속성으로 각도 조절 (단위: 도)
+            perSlideRotate: 2, // 기본값은 2도
+            // 각 카드 간의 간격(px) 조절
+            perSlideOffset: 8, 
+            // 회전 효과 활성화/비활성화
+            rotate: true,
+            // 그림자 효과 활성화/비활성화
+            slideShadows: false, 
+        },
     });
 
     //gallery_modal_swiper
@@ -87,13 +96,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $('.gallery_item .swiper_btn').on('click', function() {
         const index = $(this).closest(".gallery_item").index();
     
-        $('.section06_modal').fadeIn(200, () => {
-            galleryModalSwiper.slideTo(index, 0);
-        });
+        galleryModalSwiper.slideTo(index, 0);
+        $('.section06_modal').fadeIn(400);
     });
 
     $('.section06_modal .modal_close_btn').on('click', function(){
-        $('.section06_modal').fadeOut(200);
+        const index = galleryModalSwiper.activeIndex;
+        gallerySwiper.slideTo(index, 0);
+        $('.section06_modal').fadeOut(400);
+
     });
 
     //present btn

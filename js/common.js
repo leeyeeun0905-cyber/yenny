@@ -1,4 +1,12 @@
 
+AOS.init({
+    duration: 1000, 
+    offset: 200,
+    // useClassNames: true,
+    // initClassName: true,
+    animatedClassName: 'animated',
+});
+
 document.addEventListener("DOMContentLoaded", (event) => {
 
     const audio = document.getElementById("bgmAudio");

@@ -9,14 +9,14 @@ AOS.init({
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    // window.addEventListener("load", () => {
+
     //     $('body').css("overflow-y","hidden")
     //     setTimeout(function(){
     //         $('body').css("overflow-y","initial")
     //     },100)
-    // });
-
-
+    setTimeout(function(){
+        var sakura = new Sakura('.section01');
+    }, 2800);
 
     const audio = document.getElementById("bgmAudio");
     const bgmBtn = document.querySelector(".bgm_btn");
@@ -29,6 +29,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
             .fadeOut(200);
     });
 
+    // 1. 자동 재생 시도
+    const playAudio = () => {
+        audio.play().then(() => {
+            updateUI(true);
+        }).catch(() => {
+            // 자동 재생 막혔을 때의 처리 (UI는 정지 상태)
+            updateUI(false);
+        });
+    };
+
+    playAudio();
+
     // 버튼 클릭 시 재생/정지
     bgmBtn.addEventListener("click", () => {
         if (audio.paused) {
@@ -39,6 +51,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             bgmBtn.classList.add("paused");
         }
     });
+
+
+
 
 
     // Dday 캘린더
@@ -177,6 +192,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
     lastTouchEnd = now;
     }, false);
+
+
 });
 
 

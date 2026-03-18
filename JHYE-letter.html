@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif+KR:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=WindSong:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
-    
+    <link rel="stylesheet" href="./css/sakura.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,7 @@
 </head>
 <body>
     <header>
-        <audio id="bgmAudio" loop>
+        <audio id="bgmAudio" loop autoplay playsinline>>
             <source src="./music/bg_music.mp3" type="audio/mp3" />
         </audio>
 
@@ -37,6 +37,7 @@
         <!-- s: section01 -->
         <section id="section01" class="section section01">
             <div class="inner">
+                <canvas id="sakura_canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
                 <div class="img_box">
                     <img src="./img/section01_v1.JPG" alt="이미지1" >
                 </div>
@@ -136,7 +137,7 @@
                         <!-- The Partyum 7F Rafore Hall -->
                     </p>
                     <p class="calendar_dday" data-aos="fade-up">
-                        <strong>주혁 <i class="fa-solid fa-heart"></i> 예은</strong> 결혼이 <strong id="calendar_count" class="calendar_count"></strong>일 남았습니다.
+                        <strong>주혁 <i class="fa-solid fa-heart"></i> 예은</strong> 결혼식이 <strong id="calendar_count" class="calendar_count"></strong>일 남았습니다.
                     </p>
                     
                 </div>
@@ -179,51 +180,67 @@
                     <p class="disc" data-aos="fade-up" data-aos-delay="150">결혼식 일정입니다. 참고해주세요.</p>
                     <ul class="plan_list" data-aos>
                         <li class="plan_item" >
-                            <div class="plan_icon" data-aos="fade-up">
-                                <div class="dot">
-                                    <span></span>
+                            <div class="plan_box">
+                                <div class="plan_icon" data-aos="fade-up">
+                                    <div class="dot">
+                                        <span></span>
+                                    </div>
+                                    <span class="time">14:40</span>
                                 </div>
-                                <span class="time">14:40</span>
+                                <div class="plan_text">
+                                    <p class="plan_tit" data-aos="fade-up" data-aos-delay="150">Photo Booth</p>
+                                    <p class="desc" data-aos="fade-up" data-aos-delay="300">
+                                        포토부스가 준비되어 있습니다.<br>
+                                        오늘의 추억을 남겨보세요.<br>
+                                        축하의 메세지도 남겨주세요.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="plan_text">
-                                <p class="plan_tit" data-aos="fade-up" data-aos-delay="150">Photo Booth</p>
-                                <p class="desc" data-aos="fade-up" data-aos-delay="300">
-                                    포토부스가 준비되어 있습니다.<br>
-                                    오늘의 추억을 남겨보세요.<br>
-                                    축하의 메세지도 남겨주세요.
-                                </p>
+                            <div class="plan_img" data-aos="fade-up" data-aos-delay="300">
+                                <img src="./img/plan_img_01.png">
+                            </div>
+                            
+                        </li>
+                        <li class="plan_item">
+                            <div class="plan_img" data-aos="fade-up" data-aos-delay="300">
+                                <img src="./img/plan_img_02.png">
+                            </div>
+                            <div class="plan_box">
+                                <div class="plan_icon" data-aos="fade-up">
+                                    <div class="dot">
+                                        <span></span>
+                                    </div>
+                                    <span class="time">15:00</span>
+                                </div>
+                                <div class="plan_text">
+                                    <p class="plan_tit" data-aos="fade-up" data-aos-delay="150">Wedding Ceremony</p>
+                                    <p class="desc" data-aos="fade-up" data-aos-delay="300"> 
+                                        저희의 아름다운 결혼식을<br>
+                                        온 맘 으로 축하해주세요.<br>
+                                        온 맘 다해 감사드립니다.
+                                    </p>
+                                </div>
                             </div>
                         </li>
                         <li class="plan_item">
-                            <div class="plan_icon" data-aos="fade-up">
-                                <div class="dot">
-                                    <span></span>
+                            <div class="plan_box">
+                                <div class="plan_icon" data-aos="fade-up" >
+                                    <div class="dot">
+                                        <span></span>
+                                    </div>
+                                    <span class="time">15:40</span>
                                 </div>
-                                <span class="time">15:00</span>
-                            </div>
-                            <div class="plan_text">
-                                <p class="plan_tit" data-aos="fade-up" data-aos-delay="150">Wedding Ceremony</p>
-                                <p class="desc" data-aos="fade-up" data-aos-delay="300"> 
-                                    저희의 아름다운 결혼식을<br>
-                                    온 맘 으로 축하해주세요.<br>
-                                    온 맘 다해 감사드립니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="plan_item">
-                            <div class="plan_icon" data-aos="fade-up" >
-                                <div class="dot">
-                                    <span></span>
+                                <div class="plan_text">
+                                    <p class="plan_tit" data-aos="fade-up" data-aos-delay="150">Wedding Reception</p>
+                                    <p class="desc" data-aos="fade-up" data-aos-delay="300">
+                                        감사를 담아 정성으로 준비한<br>
+                                        피로연이 준비되어 있습니다.<br>
+                                        맛있게 드시며 즐겨주세요.
+                                    </p>
                                 </div>
-                                <span class="time">15:40</span>
                             </div>
-                            <div class="plan_text">
-                                <p class="plan_tit" data-aos="fade-up" data-aos-delay="150">Wedding Reception</p>
-                                <p class="desc" data-aos="fade-up" data-aos-delay="300">
-                                    감사를 담아 정성으로 준비한<br>
-                                    피로연이 준비되어 있습니다.<br>
-                                    맛있게 드시며 즐겨주세요.
-                                </p>
+                            <div class="plan_img" data-aos="fade-up" data-aos-delay="300">
+                                <img src="./img/plan_img_03.png">
                             </div>
                         </li>
                     </ul>
@@ -331,47 +348,47 @@
                         <ul class="swiper-wrapper gallery_list">
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery01.jpg">
+                                    <img src="./img/gal1.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery02.jpg">
+                                    <img src="./img/gal2.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery03.jpg">
+                                    <img src="./img/gal3.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery04.jpg">
+                                    <img src="./img/gal4.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery05.jpg">
+                                    <img src="./img/gal5.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery06.jpg">
+                                    <img src="./img/gal6.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery07.jpg">
+                                    <img src="./img/gal7.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery08.jpg">
+                                    <img src="./img/gal8.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
-                                    <img src="./img/gallery09.jpg">
+                                    <img src="./img/gal9.jpg">
                                 </a>
                             </li>
                             <li class="swiper-slide gallery_item">
@@ -454,20 +471,42 @@
                         </button>
                     </p>
                     <div class="map" data-aos="fade-up">
+                       <!-- * 카카오맵 - 지도퍼가기 -->
+                        <!-- 1. 지도 노드 -->
+                        <div id="daumRoughmapContainer1773848506641"
+                        class="root_daum_roughmap root_daum_roughmap_landing"></div>
 
+                        <!--
+                            2. 설치 스크립트
+                            * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                        -->
+                        <script charset="UTF-8" class="daum_roughmap_loader_script" 
+                        src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                        <!-- 3. 실행 스크립트 -->
+                        <script charset="UTF-8">
+                            new daum.roughmap.Lander({
+                                "timestamp" : "1773848506641",
+                                "key" : "jigbkuuqo6j",
+                                "mapWidth" : "100%",
+                                "mapHeight" : "auto"
+                            }).render();
+                        </script>
                     </div>
                     <div class="btn_wrap btn_wrap02" data-aos="fade-up">
-                        <a href="" title="T맵 열기" class="location_btn location_btn--white btn--link">
-                            <!-- <img src="./img/location_btn_icon_t.svg" class="btn_icon btn_icon01"> -->
-                            <span class="btn_txt">T Map</span>
+                        <a href="https://tmap.life/2296d997" target="_blank" title="T맵 열기" class="location_btn location_btn--white btn--link">
+                            <img src="./img/location_btn_icon_t.svg" class="btn_icon btn_icon01">
+                            <span class="btn_txt">T맵</span>
                         </a>
-                        <!-- <a href="" title="Kakao맵 열기" class="btn btn--white btn--link">
-                            <img src="./img/location_btn_icon_02.svg" class="btn_icon btn_icon02">
-                            <span class="btn_txt">Kakao Map</span>
-                        </a> -->
-                        <a href="" title="Naver지도 열기" class="location_btn location_btn--white btn--link">
-                            <!-- <img src="./img/location_btn_icon_naver.png" class="btn_icon btn_icon02"> -->
-                            <span class="btn_txt">Naver Map</span>
+                        
+                        <a href="https://map.kakao.com/link/map/더파티움안양,17502787" target="_blank" title="Kakao맵 열기" class="location_btn location_btn--white btn--link">
+                            <img src="./img/kakaomap_logo.svg" class="btn_icon btn_icon02">
+                            <span class="btn_txt">카카오맵</span>
+                        </a>
+                        
+                        <a href="https://m.map.naver.com/directions/goal.naver?did=36737525&ename=더파티움안양" target="_blank" title="Naver지도 열기" class="location_btn location_btn--white btn--link">
+                            <img src="./img/location_btn_icon_naver.png" class="btn_icon btn_icon03">
+                            <span class="btn_txt">네이버지도</span>
                         </a>
                     </div>
                     <div class="info">
@@ -514,10 +553,10 @@
                                     <strong class="bold">하객 2시간 무료</strong><br>
                                     주차현장 주차 요원 안내를 받아주세요.<br>
                                     <ul class="park_list">
-                                        <li><strong class="bold park_tit">제 1주차장</strong> 더파티움 안양 본건물 지하주차장</li>
-                                        <li><strong class="bold park_tit">제 2주차장</strong> 지아이에스(구.네온테크) 주차장 '동안구 부림로 146'</li>
-                                        <li><strong class="bold park_tit">제 3주차장</strong> 이마트 평촌점 주차장 '동안구 시민대로 300'</li>
-                                        <li><strong class="bold park_tit">제 4주차장</strong> 평촌 칼라힐(하이파킹) 주차빌딩 '동안구 시민대로 312'</li>
+                                        <li><strong class="bold park_tit">제1주차장</strong> 더파티움 안양 본건물 지하주차장</li>
+                                        <li><strong class="bold park_tit">제2주차장</strong> 지아이에스(구.네온테크) 주차장 '동안구 부림로 146'</li>
+                                        <li><strong class="bold park_tit">제3주차장</strong> 이마트 평촌점 주차장 '동안구 시민대로 300'</li>
+                                        <li><strong class="bold park_tit">제4주차장</strong> 평촌 칼라힐(하이파킹) 주차빌딩 '동안구 시민대로 312'</li>
                                     </ul>
                                 </p>
                             </li>
@@ -551,31 +590,35 @@
                                         <dt class="present_role">신랑</dt> 
                                         <dd class="present_name">이주혁</dd>
                                     </div>
-                                    <div>
+                                </dl>
+                                <div class="present_box">
+                                    <dl>
                                         <dt class="present_bank">신한은행</dt> 
                                         <dd class="present_num">110-333-313145</dd>
-                                    </div>
-                                </dl>
-                                <button class="present_btn--copy btn--copy" title="groom's side open" data-copy="110-333-313145">
-                                     <i class="fa-regular fa-copy"></i>
-                                    복사하기
-                                </button>
+                                    </dl>
+                                    <button class="present_btn--copy btn--copy" title="groom's side open" data-copy="110-333-313145">
+                                        복사하기
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
-                                    <div>
+                                    <div> 
                                         <dt class="present_role">신랑 아버지</dt> 
                                         <dd class="present_name">이길수</dd>
                                     </div>
-                                    <div>
+                                </dl>
+                                <div class="present_box">
+                                    <dl>
                                         <dt class="present_bank">우리은행</dt> 
                                         <dd class="present_num">1005-802-742322</dd>
-                                    </div>
-                                </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1005-802-742322">
-                                     <i class="fa-regular fa-copy"></i>
-                                    복사하기
-                                </button>
+                                    </dl>
+                                    <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1005-802-742322">
+                                        복사하기
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
@@ -583,15 +626,17 @@
                                         <dt class="present_role">신랑 어머니</dt> 
                                         <dd class="present_name">강화신</dd>
                                     </div>
-                                    <div>
+                                </dl>
+                                <div class="present_box">
+                                    <dl>
                                         <dt class="present_bank">MG새마을금고</dt> 
                                         <dd class="present_num">9003-2615-1610-7</dd>
-                                    </div>
-                                </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="9003-2615-1610-7">
-                                     <i class="fa-regular fa-copy"></i>
-                                    복사하기
-                                </button>
+                                    </dl>
+                                    <button class="present_btn--copy btn--copy" title="복사하기" data-copy="9003-2615-1610-7">
+                                        복사하기
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -607,15 +652,17 @@
                                         <dt class="present_role">신부</dt> 
                                         <dd class="present_name">이예은</dd>
                                     </div>
-                                    <div>
+                                </dl>
+                                <div class="present_box">
+                                    <dl>
                                         <dt class="present_bank">카카오뱅크</dt> 
                                         <dd class="present_num">3333-08-255-3756</dd>
-                                    </div>
-                                </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="3333-08-255-3756">
-                                     <i class="fa-regular fa-copy"></i>
-                                    복사하기
-                                </button>
+                                    </dl>
+                                    <button class="present_btn--copy btn--copy" title="복사하기" data-copy="3333-08-255-3756">
+                                        복사하기
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
@@ -623,15 +670,17 @@
                                         <dt class="present_role">신부 아버지</dt> 
                                         <dd class="present_name">이종석</dd>
                                     </div>
-                                    <div>
+                                </dl>
+                                <div class="present_box">
+                                    <dl>
                                         <dt class="present_bank">우리은행</dt> 
                                         <dd class="present_num">1002-438-131013</dd>
-                                    </div>
-                                </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1002-438-131013">
-                                     <i class="fa-regular fa-copy"></i>
-                                    복사하기
-                                </button>
+                                    </dl>
+                                    <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1002-438-131013">
+                                        복사하기
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
@@ -639,15 +688,17 @@
                                         <dt class="present_role">신부 어머니</dt> 
                                         <dd class="present_name">조재정</dd>
                                     </div>
-                                    <div>
+                                </dl>
+                                <div class="present_box">
+                                    <dl>
                                         <dt class="present_bank">우리은행</dt> 
                                         <dd class="present_num">1002-941-811152</dd>
-                                    </div>
-                                </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1002-941-811152">
-                                     <i class="fa-regular fa-copy"></i>
-                                    복사하기
-                                </button>
+                                    </dl>
+                                    <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1002-941-811152">
+                                        복사하기
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -721,69 +772,90 @@
     <!-- s: gallery modal -->
     <div class="section06_modal">
         <button class="modal_close_btn">
-            <i class="fa-light fa-xmark"></i>
+            <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="swiper swiper-container gallery_modal_swiper">
             <ul class="swiper-wrapper">
                 <li class="swiper-slide">
-                    <img src="./img/gallery01.jpg">
+                    <img src="./img/gal1.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery02.jpg">
+                    <img src="./img/gal2.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery03.jpg">
+                    <img src="./img/gal3.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery04.jpg">
+                    <img src="./img/gal4.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery05.jpg">
+                    <img src="./img/gal5.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery06.jpg">
+                    <img src="./img/gal6.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery07.jpg">
+                    <img src="./img/gal7.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery08.jpg">
+                    <img src="./img/gal8.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery09.jpg">
+                    <img src="./img/gal9.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery10.jpg">
+                    <img src="./img/gal10.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery11.jpg">
+                    <img src="./img/gal11.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery12.jpg">
+                    <img src="./img/gal12.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery13.jpg">
+                    <img src="./img/gal13.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery14.jpg">
+                    <img src="./img/gal14.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery15.jpg">
+                    <img src="./img/gal15.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery16.jpg">
+                    <img src="./img/gal15-1.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery17.jpg">
+                    <img src="./img/gal16.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery18.jpg">
+                    <img src="./img/gal17.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery19.jpg">
+                    <img src="./img/gal18.jpg">
                 </li>
                 <li class="swiper-slide">
-                    <img src="./img/gallery20.jpg">
+                    <img src="./img/gal19.jpg">
+                </li>
+                <li class="swiper-slide">
+                    <img src="./img/gal20.jpg">
+                </li>
+                <li class="swiper-slide">
+                    <img src="./img/gal21.jpg">
+                </li>
+                <li class="swiper-slide">
+                    <img src="./img/gal22.jpg">
+                </li>
+                <li class="swiper-slide">
+                    <img src="./img/gal23.jpg">
+                </li>
+                <li class="swiper-slide">
+                    <img src="./img/gal24.jpg">
+                </li>
+                <li class="swiper-slide">
+                    <img src="./img/gal25.jpg">
+                </li>
+                <li class="swiper-slide">
+                    <img src="./img/gal26.jpg">
                 </li>
             </ul>
         </div>
@@ -800,6 +872,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./js/sakura.js"></script>
 <script src="./js/common.js"></script>
 
 </html>

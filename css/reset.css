@@ -128,12 +128,14 @@ body {
     margin: 0 auto;
     font-family: 'Pretendard';
 	line-height: 1.3;
+	color: #444;
 	background-color: rgb(221, 230, 204);
 }
 main {
 	margin-top: 0;
 	margin: 0 auto;
 	border-radius: 0 0 0 0;
+	box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.4);
 }
 .section {
 	box-sizing: border-box;
@@ -191,20 +193,20 @@ img {
 }
 .toast--music .toast_txt{
 	padding: 0 0;
-	font-size: 1.25rem;
+	font-size: 0.925rem;
 	color: #fff;
 	background: none;;
 }
 @keyframes toastFade {
-	0%   { opacity: 0; transform: translate(-50%, 20px); }
+	0%   { opacity: 0; transform: translate(-50%, 30px); }
 	15%  { opacity: 1; transform: translate(-50%, 0px); }
 	85%  { opacity: 1; transform: translate(-50%, 0px); }
-	100% { opacity: 0; transform: translate(-50%, 20px); }
+	100% { opacity: 0; transform: translate(-50%, 30px); }
 }
 @keyframes toastFadeReverse {
 	0%   { opacity: 0; transform: translate(-50%, 0px); }
-	15%  { opacity: 1; transform: translate(-50%, 20px); }
-	85%  { opacity: 1; transform: translate(-50%, 20px); }
+	15%  { opacity: 1; transform: translate(-50%, 30px); }
+	85%  { opacity: 1; transform: translate(-50%, 30px); }
 	100% { opacity: 0; transform: translate(-50%, 00px); }
 }
 

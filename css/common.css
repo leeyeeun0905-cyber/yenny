@@ -70,7 +70,7 @@ header {
 .section .disc {
     margin: 0.7rem 0 2.7rem;
     font-size: 1.125rem;
-    color: #6d6d6d; 
+    color: #757474; 
 }
 
 
@@ -85,6 +85,16 @@ header {
 }
 .section01 .inner {
     padding: 0 0;
+}
+/* 벚꽃 캔버스 스타일 */
+#sakura_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 2; 
 }
 .section01 .img_box {
     width: 100%;
@@ -108,7 +118,7 @@ header {
     background-color: rgb(0 0 0 / 80%);
     opacity: 1;
     visibility: visible;
-    animation: bgdimm 1s linear 2.9s forwards;
+    animation: bgdimm 1s ease-out 2.9s forwards;
 }
 @keyframes  bgdimm {
     100% {opacity: 0;}   
@@ -123,7 +133,7 @@ header {
     transform: translateX(-50%);
 }
 .section01 .text_box {
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     top: 0;
     left: 50%;
@@ -214,7 +224,7 @@ header {
     display: inline-block;
     width: 0%;
     height: 1px;
-    background-color: #568263;
+    background-color: rgb(160, 181, 117, 1);
     animation: crossw 0.5s linear forwards;
 }
 .section02 .icon.aos-animate::after {
@@ -225,7 +235,7 @@ header {
     display: inline-block;
     width: 1px;
     height: 0%;
-    background-color: #568263;
+    background-color: rgb(160, 181, 117, 1);
     animation: crossh 0.5s 0.3s linear forwards;
 }
 @keyframes crossw {
@@ -305,7 +315,7 @@ header {
     border-bottom:1px solid #ccc;
 }
 .section02 .calendar_table .red {
-    color: #d80000;
+    color: #ff7070;
 }
 .section02 .calendar_table th {
     padding-bottom: 1rem;
@@ -328,9 +338,8 @@ header {
     transition: all 0.3s ease;
 }
 .today {
-    font-weight: 600;
-    color: #2c4e36;
-    background-color: rgb(221, 230, 204);
+    color: #Fff;
+    background-color: rgb(160, 181, 117, 0.8)
 }
 /* .section02 .calendar_spot {
     margin: 1.5rem 0 2.37rem;
@@ -343,9 +352,8 @@ header {
     color: #242424;
 }
 .calendar_dday .calendar_count {
-    color: #2c4e36;
-    /* font-size: 1.125rem; */
-    font-weight: 500;
+    color: rgb(160, 181, 117, 1);
+
 }
 
 /* e: section02 */
@@ -399,39 +407,47 @@ header {
 .section04 .plan_item {
     position: relative;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 24.375rem;
+    width: 100%;
+}
+.section04 .plan_img {
+    width: calc(50% - 1.75rem);
+}
+.section04 .plan_box {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    max-width: 24.375rem;
-    width: 50%;
+    width: calc(50% - 1.25rem);
 }
-.section04 .plan_item:nth-child(odd) {
-    align-self: flex-start;
+.section04 .plan_item:nth-child(odd) .plan_box {
     align-items: flex-end;
-    margin-top: 20px;
-    padding-right: 20px;
+    /* margin-top: 20px; */
+    /* padding-right: 20px; */
+}
+.section04 .plan_item:nth-child(even) .plan_box {
+    align-items: flex-start;
+    /* padding-left: 20px; */
 }
 .section04 .plan_item:nth-child(odd) .plan_icon .dot span {
     left: auto;
-    right: -24px;
+    right: -1.47rem;
 }
 .section04 .plan_item:nth-child(odd) .plan_icon .dot::before {
     left: auto;
-    right: -24px;
+    right: -1.47rem;
 }
 .section04 .plan_item:nth-child(odd) .plan_text{
     text-align: right
 }
-.section04 .plan_item:nth-child(even) {
-    align-self: flex-end;
-    align-items: flex-start;
-    padding-left: 20px;
-}
+
 .section04 .plan_icon .dot span {
     z-index: 1;
     display: inline-block;
     position: absolute;
-    left: -24px;
+    left: -1.47rem;
     top: 9px;
     width: 8px;
     height: 8px;
@@ -442,7 +458,7 @@ header {
     z-index: 0;
     content: "";
     position: absolute;
-    left: -24px;
+    left: -1.47rem;
     top: 5px;
     width: 16px;
     height: 16px;
@@ -455,9 +471,9 @@ header {
     font-size: 1rem;
     height: 1.5rem;
     line-height: 26px;
-    background-color: rgb(221, 230, 204);
+    background-color: rgb(160, 181, 117, 0.7);
     border-radius: 50px;
-    color: #2c4e36;
+    color: #fff;
 }
 .section04 .plan_text {
     text-align: left;
@@ -480,7 +496,7 @@ header {
 /* s: section05 */
 .section05 {
     padding: 6.25rem 0 6.25rem;
-    background-color: #F3F0EC;
+    background-color: rgb(244 245 241);
 }
 .section05 .contact_wrap {
     display: flex;
@@ -493,13 +509,13 @@ header {
     gap: 3.56rem;
 }
 .section05 .contact_list.bride {
-    padding-bottom: 2rem;
+    padding-bottom: 2.7rem;
     border-bottom: 1px solid #D9D9D9;
 }
 .section05 .contact_list.parent {
     flex-wrap: wrap;
-    padding-top: 2rem;
-    gap: 2rem 3.56rem;
+    padding-top: 2.7rem;
+    gap: 2.5rem 3.56rem;
 }
 .section05 .contact_item {
     width: 8.93rem;
@@ -520,13 +536,13 @@ header {
     font-weight: 400;
     height: 1.5rem;
     line-height: 26px;
-    background-color: rgb(221, 230, 204);
+    background-color: rgb(160, 181, 117, 0.7);
     border-radius: 50px;
-    color: #2c4e36;
+    color: #fff;
 }
 .section05 .contact_item .tag.woman {
-    background-color: rgb(230, 204, 216);
-    color: #4e2c3d;
+    background-color:#f4d6e7;
+    color: #fff;
 }
 .section05 .contact_item .name {
     margin-bottom: 1.25rem;
@@ -541,15 +557,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 .section05 .contact_item .contact_icon .fa-phone {
     font-size: 1.4rem;
-    color: #2c4e36;
+    color: rgb(44, 78, 54, 0.5);
 }
 .section05 .contact_item .contact_icon .fa-envelope {
     font-size: 1.4rem;
-    color: #2c4e36;
+    color: rgb(44, 78, 54, 0.5);
 }
 /* e: section05 */
 
@@ -618,6 +634,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 1.5rem;
+    font-size: 1.5rem;
     background: transparent;
     opacity: 0.6;
 }
@@ -655,9 +672,9 @@ header {
 .section07{
     position: relative;
     padding: 6.25rem 0 6.25rem;
-    background-color: #ffffff;
+    background-color: rgb(235, 241, 224);
 }
-.section07::after {
+/* .section07::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -666,7 +683,7 @@ header {
     height: 1px;
     background-color: #bcbcbc;
     transform: translateX(-50%);
-}
+} */
 .section07 .desc {
     font-size: 1.125rem;
     line-height: 1.5;
@@ -686,24 +703,49 @@ header {
 }
 .section07 .disc_sub {
     margin: 0.7rem 0 2.37rem;
-    font-size: 1.125rem;
+    font-size: 1.025rem;
     color: #4A4A4A;
 }
 
 
 .section07 .map {
-    max-width: 652px;
     width: 100%;
-    height: 264.6px;
-    background-color: #dfdfdf;
 }
-
-
+#daumRoughmapContainer1773848506641 {
+    width: 100%;
+    height: auto;
+}
+#daumRoughmapContainer1773848506641 .cont {
+    display: none;
+}
+.wrap_controllers {
+    display: none;
+}
 
 .section07 .btn_wrap02 {
-    margin-top: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1.5rem;
 }
-
+.section07 .btn_wrap02 .location_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 30%;
+    padding: 0.7rem 0;
+    font-size: 1rem;
+    background-color:rgb(255 255 255 / 80%);
+    border-radius: 8px;
+}
+.section07 .btn_wrap02 .location_btn .btn_icon {
+    width: 1.2rem;
+}
+.section07 .btn_wrap02 .location_btn .btn_icon01 {
+    width: 1rem;
+}
 .section07 .info {
     text-align: left;
 }
@@ -730,6 +772,8 @@ header {
     gap: 10px;
     margin-bottom: 1.2rem;
     font-size: 1rem;
+    font-weight: 400;
+    color: #92a571;
 }
 .section07 .info_desc {
     font-size: 1rem;
@@ -747,15 +791,31 @@ header {
     width: 70px;
 }
 .section07 .park_list li {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 /* e: section07 */
 
 /* s: section08 */
 .section08 {
-    padding: 6.25rem 0 6.25rem;
+    position: relative;
+    padding: 9.25rem 0 6.25rem;
     background-color: #fff;
+}
+.section08::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 5rem;
+    width: 3rem;
+    height: 1px;
+    background: #999;
+    transform: translateX(-50%);
+}
+.section08 .tit {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: rgb(44, 78, 54, 0.6);
 }
 .section08 .present_cont.bride {
     margin-top: 1rem;
@@ -768,9 +828,10 @@ header {
     height: 3.5rem;
     padding: 0 1.2rem;
     font-size: 1rem;
-    color: #242424;
-    background-color: #AFBCB3;
+    color: #fff;
+    background-color: rgb(188 204 170);
     border-radius: 7px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.22);
 
 }
 .section08 .present_btn i {
@@ -783,50 +844,67 @@ header {
 .section08 .present_list {
     display: none;
     width: 100%;
-    padding: 1.2rem 1rem;
-    background-color: rgb(175, 188, 179, 0.22);
+    padding: 1.3rem 1rem;
+    background-color: rgb(188 204 170 / 22%);
+    border-radius: 7px;
+    
 }
 .section08 .present_item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column;
+    /* justify-content: space-between; */
     width: 100%;
-    height: 135px;
-    margin-bottom: 1rem;
-    padding: 0 1rem;
+    margin-bottom: 1.3rem;
+    padding: 1.7rem 2rem;
     font-size: 1rem;
     color: #242424;
     background-color: #FFFFFF;
     border-radius: 7px;
+    box-shadow:3px 3px 5px rgba(0, 0, 0, 0.06)
 }
 .section08 .present_list .present_item:last-child {
     margin-bottom:  0;
 }
 .section08 .present_item .present_info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 20px;
+    width: 100%;
 }
 .section08 .present_item .present_info > div {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
 }
-.section08 .present_item .present_info > div dt {
-    margin-right: 7px;
-    /* width: 10rem; */
+.section08 .present_item .present_info .present_role {
     font-weight: 400;
-    white-space: nowrap;
+}
+.section08 .present_item .present_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #f2f2f2;
+    border-radius: 7px;
+}
+.section08 .present_item .present_box dl {
+    text-align: left;
+}
+.section08 .present_item .present_box .present_bank {
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: #bbb;
 }
 .section08 .present_item .present_btn--copy {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    width: 6.5rem;
-    height: 3rem;
+    gap: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
     font-weight: 400;
-    background-color: #AFBCB3;
+    background-color: rgb(188 204 170 / 50%);
+    color: #9aae85;
     border-radius: 7px;
 }
 /* e: section08 */

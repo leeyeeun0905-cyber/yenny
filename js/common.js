@@ -9,6 +9,15 @@ AOS.init({
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
+    // window.addEventListener("load", () => {
+    //     $('body').css("overflow-y","hidden")
+    //     setTimeout(function(){
+    //         $('body').css("overflow-y","initial")
+    //     },100)
+    // });
+
+
+
     const audio = document.getElementById("bgmAudio");
     const bgmBtn = document.querySelector(".bgm_btn");
 
@@ -66,7 +75,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     for (let day = 1; day <= lastDate; day++) {
         const isWeddingDay = day === 6;
-        html += `<td><span class="${isWeddingDay ? "today" : ""}">${day}</span></td>`;
+
+        // 일요일 계산: (현재날짜 + 시작요일) % 7 이 1이면 일요일입니다.
+        const isSunday = (day + firstDay) % 7 === 1;
+
+        // 클래스 설정: 웨딩데이면 today, 일요일이면 red 추가
+        let className = "";
+        if (isWeddingDay) className = "today";
+        if (isSunday) className += " red"; // 기존 클래스가 있을 수 있으니 한 칸 띄고 추가
+
+        html += `<td><span class="${className.trim()}">${day}</span></td>`;
+        
         if ((day + firstDay) % 7 === 0) html += "</tr><tr>";
     }
 
@@ -141,6 +160,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 .fadeOut(200);
         });
     });
+
+    // 두 손가락으로 벌리는 제스처(Pinch Zoom) 방지
+    document.addEventListener('touchstart', function (event) {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
+    }, { passive: false });
+
+    // 더블 탭 확대 방지
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+    }, false);
 });
 
 

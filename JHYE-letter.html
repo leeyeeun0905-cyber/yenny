@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,8 +38,15 @@
         <section id="section01" class="section section01">
             <div class="inner">
                 <div class="img_box">
-                    <img src="./img/section01_v1.JPG" alt="이미지1" style="opacity: 0.03;">
+                    <img src="./img/section01_v1.JPG" alt="이미지1" >
                 </div>
+                <div class="text_box__top">
+                    <p class="desc">
+                        주혁 ㅡ 예은
+                    </p>
+                    <p class="date">2025.06.06 SAT PM 3:00</p>
+                </div>
+                <div class="dimm_box"></div>
                 <div class="text_box">
                     <h1 class="title">
                         <svg width="486" height="124" viewBox="0 0 486 124" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,13 +93,7 @@
                                 <path d="M11.009 80.442C7.957 80.442 5.341 79.6427 3.161 78.044C1.05367 76.4453 0 73.575 0 69.433C0 65.3637 1.199 61.1127 3.597 56.68C5.995 52.2473 9.33767 47.851 13.625 43.491C17.985 39.131 23.0353 35.0253 28.776 31.174C34.5893 27.25 40.8387 23.7983 47.524 20.819C54.282 17.8397 61.2943 15.478 68.561 13.734C75.8277 11.99 83.0943 11.118 90.361 11.118C97.0463 11.118 102.242 12.0627 105.948 13.952C109.654 15.8413 111.507 18.53 111.507 22.018C111.507 23.3987 111.253 24.743 110.744 26.051C109.727 28.8123 107.765 32.0097 104.858 35.643C102.024 39.2763 99.081 42.9097 96.029 46.543C95.375 47.3423 94.394 48.5777 93.086 50.249C91.8507 51.8477 90.47 53.7007 88.944 55.808C87.4907 57.9153 86.0737 60.059 84.693 62.239C83.3123 64.419 82.186 66.49 81.314 68.452C80.442 70.3413 80.006 71.94 80.006 73.248C80.006 74.992 80.9507 75.864 82.84 75.864C85.0927 75.864 87.854 74.9193 91.124 73.03C94.394 71.068 97.882 68.561 101.588 65.509C105.367 62.3843 109.036 59.0053 112.597 55.372C116.23 51.666 119.5 48.0327 122.407 44.472C125.314 40.9113 127.53 37.7867 129.056 35.098C130.582 32.4093 131.854 30.2657 132.871 28.667C133.888 26.9957 135.305 26.16 137.122 26.16C137.631 26.16 138.321 26.3417 139.193 26.705C140.065 26.9957 140.828 27.359 141.482 27.795C142.209 28.231 142.463 28.7033 142.245 29.212C141.954 29.866 141.373 30.8107 140.501 32.046C139.629 33.2087 138.757 34.2623 137.885 35.207C137.086 36.1517 136.504 36.6967 136.141 36.842C134.76 38.804 133.307 41.4563 131.781 44.799C130.328 48.069 128.983 51.4843 127.748 55.045C127.385 56.0623 126.876 57.5883 126.222 59.623C125.641 61.585 125.096 63.6923 124.587 65.945C124.151 68.1977 123.933 70.2687 123.933 72.158C123.933 73.7567 124.187 75.0647 124.696 76.082C125.205 77.0993 126.077 77.608 127.312 77.608C128.111 77.608 129.02 77.39 130.037 76.954C131.054 76.518 132.253 75.8277 133.634 74.883C135.741 73.5023 138.466 71.2133 141.809 68.016C145.224 64.8187 148.785 61.3307 152.491 57.552C158.159 51.884 163.936 45.78 169.822 39.24C175.708 32.6273 181.63 26.5233 187.589 20.928C192.676 16.132 197.835 11.9537 203.067 8.393C208.372 4.83233 214.003 2.289 219.962 0.762997C221.125 0.544995 222.251 0.363329 223.341 0.217997C224.504 0.0726656 225.666 0 226.829 0C228.137 0 229.445 0.108999 230.753 0.326996C233.369 0.90833 235.331 2.14366 236.639 4.033C237.947 5.84966 238.601 8.02966 238.601 10.573C238.601 13.9883 237.438 17.6943 235.113 21.691C232.788 25.6877 229.336 29.2483 224.758 32.373C224.395 32.6637 224.068 32.809 223.777 32.809C223.559 32.809 223.45 32.7 223.45 32.482C223.45 32.3367 223.595 32.0823 223.886 31.719C224.177 31.283 224.685 30.847 225.412 30.411C227.447 29.0303 229.263 27.2863 230.862 25.179C232.461 23.0717 233.732 20.8553 234.677 18.53C235.622 16.2047 236.094 14.061 236.094 12.099C236.094 10.4277 235.731 8.97433 235.004 7.739C234.277 6.50366 233.078 5.63166 231.407 5.123C230.535 4.97766 229.663 4.86866 228.791 4.796C227.992 4.72333 227.192 4.687 226.393 4.687C224.576 4.687 222.76 4.94133 220.943 5.45C216.074 6.61266 210.988 8.68367 205.683 11.663C200.451 14.6423 195.401 18.1667 190.532 22.236C186.099 25.942 181.812 29.9387 177.67 34.226C173.528 38.5133 169.531 42.837 165.68 47.197C161.829 51.557 158.123 55.7353 154.562 59.732C151.219 63.5107 147.84 67.035 144.425 70.305C141.082 73.5023 137.812 76.082 134.615 78.044C132.362 79.4973 130.001 80.224 127.53 80.224C125.277 80.224 123.352 79.4247 121.753 77.826C120.154 76.3 119.355 73.8293 119.355 70.414C119.355 68.452 119.646 65.9087 120.227 62.784C120.881 59.5867 121.68 56.3167 122.625 52.974C123.642 49.5587 124.696 46.543 125.786 43.927C124.914 45.017 123.533 46.6157 121.644 48.723C119.827 50.7577 117.684 53.083 115.213 55.699C112.742 58.315 110.054 60.9673 107.147 63.656C104.24 66.272 101.225 68.7063 98.1 70.959C95.048 73.2117 91.996 75.0283 88.944 76.409C85.9647 77.7897 83.0943 78.48 80.333 78.48C78.2983 78.48 76.8087 78.0803 75.864 77.281C74.992 76.4817 74.556 75.428 74.556 74.12C74.556 72.5213 75.0283 70.6683 75.973 68.561C76.9903 66.4537 78.262 64.2373 79.788 61.912C81.3867 59.514 83.058 57.1887 84.802 54.936C86.546 52.6833 88.181 50.6123 89.707 48.723C91.233 46.8337 92.432 45.3077 93.304 44.145C95.266 41.529 97.119 38.913 98.863 36.297C100.607 33.6083 102.024 30.9923 103.114 28.449C104.204 25.9057 104.749 23.6167 104.749 21.582C104.749 18.966 103.659 16.8587 101.479 15.26C99.299 13.6613 95.5203 12.862 90.143 12.862C83.385 12.862 76.5907 13.6977 69.76 15.369C62.9293 17.0403 56.3167 19.3657 49.922 22.345C43.6 25.2517 37.714 28.6307 32.264 32.482C26.814 36.2607 22.0543 40.2937 17.985 44.581C13.9157 48.7957 10.7183 53.083 8.393 57.443C6.14033 61.803 5.014 65.9813 5.014 69.978C5.014 73.3933 5.668 75.7187 6.976 76.954C8.35667 78.1167 9.95533 78.698 11.772 78.698C12.862 78.698 13.9883 78.5527 15.151 78.262C16.3137 78.044 17.44 77.7897 18.53 77.499C18.6753 77.4263 18.9297 77.39 19.293 77.39C20.165 77.39 20.601 77.608 20.601 78.044C20.601 78.3347 20.3467 78.589 19.838 78.807C18.4573 79.3157 17.004 79.7153 15.478 80.006C13.952 80.2967 12.4623 80.442 11.009 80.442Z" fill="#FAED87"/>
                             </g>
                         </svg>
-
-
                     </h1>
-                    <p class="desc">
-                        주혁 ㅡ 예은
-                    </p>
-                    <p class="date">2025.06.06 SAT PM 3:00</p>
                 </div>
             </div>
         </section>
@@ -103,27 +104,27 @@
             <div class="inner">
                 <div class="icon" data-aos=""></div>
                 <p class="desc">
-                    하나님 안에서 두 사람이 만나<br>
-                    한 몸을 이루어 작은 교회가 되려 합니다.<br>
-                    사랑과 기도로 저희의 시작을<br>
-                    함께 지켜봐 주시고 축복해 주세요.
+                    <em data-aos="fade-up">하나님 안에서 두 사람이 만나<br></em>
+                    <em data-aos="fade-up" data-aos-delay="150">한 몸을 이루어 작은 교회가 되려 합니다.<br></em>
+                    <em data-aos="fade-up" data-aos-delay="300">사랑과 기도로 저희의 시작을<br></em>
+                    <em data-aos="fade-up" data-aos-delay="450">함께 지켜봐 주시고 축복해 주세요.</em>
                 </p>
-                <p class="name">
+                <p class="name" data-aos="fade-up"  data-aos-delay="200">
                     신랑 이주혁 ･ 신부 이예은
                 </p>
                 <div class="img_box">
                 </div>
                 <div class="calendar">
                     <div class="calendar_header">
-                        <h2 class="calendar_date">wedding day</h2>
-                        <p class="calendar_sub-date">2026년 6월 6일 토요일 오후 3:00<br>
+                        <h2 class="calendar_date" data-aos="fade-up">wedding day</h2>
+                        <p class="calendar_sub-date" data-aos="fade-up" data-aos-delay="150">2026년 6월 6일 토요일 오후 3:00<br>
                         </p>
-                        <p class="calendar_sub-date en">Saturday, June 6, 2026 ㅣ PM 3:00</p>
+                        <p class="calendar_sub-date en" data-aos="fade-up" data-aos-delay="300">Saturday, June 6, 2026 ㅣ PM 3:00</p>
                         <!-- <p class="calendar_sub-date en">더 파티움 안양 7F 라포레홀</p> -->
                         <!-- <hr/> -->
                     </div>
 
-                    <table class="calendar_table">
+                    <table class="calendar_table" data-aos="fade-up" data-aos-delay="450">
                         <thead>
                             <tr>
                                 <th class="red">Sun</th><th>Mon</th><th>The</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
@@ -131,10 +132,10 @@
                         </thead>
                         <tbody id="calendar_body"></tbody>
                     </table>
-                    <p class="calendar_spot">
+                    <p class="calendar_spot" >
                         <!-- The Partyum 7F Rafore Hall -->
                     </p>
-                    <p class="calendar_dday">
+                    <p class="calendar_dday" data-aos="fade-up">
                         <strong>주혁 <i class="fa-solid fa-heart"></i> 예은</strong> 결혼이 <strong id="calendar_count" class="calendar_count"></strong>일 남았습니다.
                     </p>
                     
@@ -174,9 +175,9 @@
         <section id="section04" class="section section04">
             <div class="inner">
                 <div class="plan">
-                    <p class="tit">Timeline</p>
-                    <p class="disc">결혼식 순서입니다 참고해주세요.</p>
-                    <ul class="plan_list">
+                    <p class="tit" data-aos="fade-up">Timeline</p>
+                    <p class="disc" data-aos="fade-up" data-aos-delay="150">결혼식 일정입니다. 참고해주세요.</p>
+                    <ul class="plan_list" data-aos>
                         <li class="plan_item" >
                             <div class="plan_icon" data-aos="fade-up">
                                 <div class="dot">
@@ -235,13 +236,14 @@
         <section id="section05" class="section section05">
             <div class="inner">
                 <div class="contact">
-                    <p class="tit">Contact</p>
+                    <p class="tit" data-aos="fade-up">Contact</p>
+                    <p class="disc" data-aos="fade-up" data-aos-delay="150">직접 축하의 마음을 전해보세요.</p>
                     <div class="contact_wrap">
                         <ul class="contact_list bride">
                             <li class="contact_item">
-                                <p class="role">신랑</p>
-                                <p class="name">이주혁</p>
-                                <div class="contact_icon">
+                                <p class="role tag" data-aos="fade-up">신랑</p>
+                                <p class="name bold" data-aos="fade-up">이주혁</p>
+                                <div class="contact_icon" data-aos="fade-up">
                                     <a href="tel:010-9326-9312" title="이주혁에게 전화걸기">
                                         <i class="fa-solid fa-phone"></i>
                                     </a>
@@ -251,9 +253,9 @@
                                 </div>
                             </li>
                             <li class="contact_item">
-                                <p class="role">신부</p>
-                                <p class="name">이예은</p>
-                                <div class="contact_icon">
+                                <p class="role tag woman" data-aos="fade-up">신부</p>
+                                <p class="name bold" data-aos="fade-up">이예은</p>
+                                <div class="contact_icon" data-aos="fade-up">
                                     <a href="tel:010-5119-5745" title="이예은에게 전화걸기">
                                         <i class="fa-solid fa-phone"></i>
                                     </a>
@@ -265,9 +267,9 @@
                         </ul>
                         <ul class="contact_list parent">
                             <li class="contact_item">
-                                <p class="role">신랑아버지</p>
-                                <p class="name">이길수</p>
-                                <div class="contact_icon">
+                                <p class="role bold" data-aos="fade-up">신랑아버지</p>
+                                <p class="name" data-aos="fade-up">이길수</p>
+                                <div class="contact_icon" data-aos="fade-up">
                                     <a href="tel:010-5183-8965" title="이길수님께 전화걸기">
                                         <i class="fa-solid fa-phone"></i>
                                     </a>
@@ -277,9 +279,9 @@
                                 </div>
                             </li>
                             <li class="contact_item">
-                                <p class="role">신부아버지</p>
-                                <p class="name">이종석</p>
-                                <div class="contact_icon">
+                                <p class="role bold" data-aos="fade-up">신부아버지</p>
+                                <p class="name" data-aos="fade-up">이종석</p>
+                                <div class="contact_icon"  data-aos="fade-up">
                                     <a href="tel:010-5339-5745" title="이종석님께 전화걸기">
                                         <i class="fa-solid fa-phone"></i>
                                     </a>
@@ -289,9 +291,9 @@
                                 </div>
                             </li>
                             <li class="contact_item">
-                                <p class="role">신랑어머니</p>
-                                <p class="name">강화신</p>
-                                <div class="contact_icon">
+                                <p class="role bold"  data-aos="fade-up">신랑어머니</p>
+                                <p class="name"  data-aos="fade-up">강화신</p>
+                                <div class="contact_icon"  data-aos="fade-up">
                                     <a href="tel:010-8302-2116" title="강화신님께 전화걸기">
                                         <i class="fa-solid fa-phone icon"></i>
                                     </a>
@@ -301,9 +303,9 @@
                                 </div>
                             </li>
                             <li class="contact_item">
-                                <p class="role">신부어머니</p>
-                                <p class="name">조재정</p>
-                                <div class="contact_icon">
+                                <p class="role bold"  data-aos="fade-up">신부어머니</p>
+                                <p class="name"  data-aos="fade-up">조재정</p>
+                                <div class="contact_icon"  data-aos="fade-up">
                                     <a href="tel:010-6334-5745" title="조재정님께 전화걸기">
                                         <i class="fa-solid fa-phone"></i>
                                     </a>
@@ -323,9 +325,9 @@
         <section id="section06" class="section section06">
             <div class="inner">
                 <div class="gallery">
-                    <p class="tit">Gallery</p>
-                    <p class="disc">사진을 클릭하시면 전체 화면 보기가 가능합니다.</p>
-                    <div class="swiper swiper-container gallery_swiper">
+                    <p class="tit"  data-aos="fade-up">Gallery</p>
+                    <p class="disc"  data-aos="fade-up">사진을 클릭하시면 전체 화면 보기가 가능합니다.</p>
+                    <div class="swiper swiper-container gallery_swiper"  data-aos="fade-up">
                         <ul class="swiper-wrapper gallery_list">
                             <li class="swiper-slide gallery_item">
                                 <a href="javascript:;" class="swiper_btn">
@@ -439,27 +441,24 @@
         <section id="section07" class="section section07">
             <div class="inner">
                 <div class="location">
-                    <p class="tit">Location</p>
-                    <p class="disc">
-                        더파티움 안양 7F 라포레홀<br>
-                        <small>경기 안양시 동안구 시민대로 311 금강스마트빌딩</small>
-                    </p>
-                    <div class="btn_wrap btn_wrap01">
-                        <button title="복사하기" class="location_btn btn--copy" data-copy="경기 안양시 동안구 시민대로 311 금강스마트빌딩 7층">
-                            <i class="fa-regular fa-copy"></i>
-                            <span class="btn_txt">복사하기</span>
-                        </button>
+                    <p class="tit"  data-aos="fade-up" >Location</p>
+                    <p class="desc"  data-aos="fade-up" data-aos-delay="150">더파티움 안양 7F 라포레홀
                         <a href="tel:031-731-5000" title="전화하기" class="location_btn btn--link">
                             <i class="fa-solid fa-phone"></i>
-                            <span class="btn_txt">전화하기</span>
                         </a>
-                    </div>
-                    <div class="map">
+                        
+                    </p>
+                    <p class="disc_sub" data-aos="fade-up" data-aos-delay="300">경기 안양시 동안구 시민대로 311 금강스마트빌딩
+                        <button title="복사하기" class="location_btn btn--copy" data-copy="경기 안양시 동안구 시민대로 311 금강스마트빌딩 7층">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </p>
+                    <div class="map" data-aos="fade-up">
 
                     </div>
-                    <div class="btn_wrap btn_wrap02">
+                    <div class="btn_wrap btn_wrap02" data-aos="fade-up">
                         <a href="" title="T맵 열기" class="location_btn location_btn--white btn--link">
-                            <img src="./img/location_btn_icon_t.svg" class="btn_icon btn_icon01">
+                            <!-- <img src="./img/location_btn_icon_t.svg" class="btn_icon btn_icon01"> -->
                             <span class="btn_txt">T Map</span>
                         </a>
                         <!-- <a href="" title="Kakao맵 열기" class="btn btn--white btn--link">
@@ -467,20 +466,62 @@
                             <span class="btn_txt">Kakao Map</span>
                         </a> -->
                         <a href="" title="Naver지도 열기" class="location_btn location_btn--white btn--link">
-                            <img src="./img/location_btn_icon_naver.png" class="btn_icon btn_icon02">
+                            <!-- <img src="./img/location_btn_icon_naver.png" class="btn_icon btn_icon02"> -->
                             <span class="btn_txt">Naver Map</span>
                         </a>
                     </div>
                     <div class="info">
-                        <p class="info_tit">
-                            <img src="./img/location_info_icon.svg" class="info_icon">    
-                            Parking Notice
-                        </p>
-                        <p class="info_desc">
-                            Parking in this building is small<br>
-                            according to the parking instructions<br>
-                            Please use parking lots 1, 2, and 3.
-                        </p>
+                        <ul class="info_list">
+                            <li class="info_item" data-aos="fade-up">
+                                <p class="info_tit">
+                                    <i class="fa-solid fa-train-subway"></i>
+                                    지하철 이용 시
+                                </p>
+                                <p class="info_desc">
+                                    <em class="blue bold">4호선 평촌역</em><br>
+                                    3번출구 횡단보도 맞은편
+
+                                </p>
+                            </li>
+                            <li class="info_item" data-aos="fade-up">
+                                <p class="info_tit">
+                                    <i class="fa-solid fa-bus-simple"></i>
+                                    버스 이용 시
+                                </p>
+                                <p class="info_desc">
+                                    <em class="bold">평촌역 하차</em><br>
+                                    <strong class="bold">일반버스</strong> 1, 6, 22, 52, 52-1, 83<br>
+                                    <strong class="bold">마을버스</strong> 2-1, 5, 5-1, 5-5, 6, 6-1, 7, 8, 10-1
+                                </p>
+                            </li>
+                            <li class="info_item" data-aos="fade-up">
+                                <p class="info_tit">
+                                    <i class="fa-solid fa-car"></i>
+                                    자차 이용 시
+                                </p>
+                                <p class="info_desc">
+                                    <strong class="bold">내비게이션 검색</strong><br>
+                                    '더파티움 안양' 또는 '시민대로 311'<br>
+                                    경기 안양시 동안구 시민대로 311 금강스마트빌딩
+                                </p>
+                            </li>
+                            <li class="info_item" data-aos="fade-up">
+                                <p class="info_tit">
+                                    <i class="fa-solid fa-square-parking"></i>
+                                    주차 안내
+                                </p>
+                                <p class="info_desc">
+                                    <strong class="bold">하객 2시간 무료</strong><br>
+                                    주차현장 주차 요원 안내를 받아주세요.<br>
+                                    <ul class="park_list">
+                                        <li><strong class="bold park_tit">제 1주차장</strong> 더파티움 안양 본건물 지하주차장</li>
+                                        <li><strong class="bold park_tit">제 2주차장</strong> 지아이에스(구.네온테크) 주차장 '동안구 부림로 146'</li>
+                                        <li><strong class="bold park_tit">제 3주차장</strong> 이마트 평촌점 주차장 '동안구 시민대로 300'</li>
+                                        <li><strong class="bold park_tit">제 4주차장</strong> 평촌 칼라힐(하이파킹) 주차빌딩 '동안구 시민대로 312'</li>
+                                    </ul>
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -491,120 +532,120 @@
         <section id="section08" class="section section08">
             <div class="inner">
                 <div class="present">
-                    <p class="tit">Present</p>
-                    <p class="sub_tit">
-                        I wrote it down for those who have difficulty attending.<br>
-                        I ask for your understanding with a generous heart.
+                    <p class="tit" data-aos="fade-up">마음 전하실 곳</p>
+                    <p class="disc" data-aos="fade-up" data-aos-delay="150">
+                        참석이 어려우신 분들을 위해 기재했습니다.<br>
+                        너그러운 마음으로 양해 부탁드립니다.
                     </p>
                 </div>
                 <div class="present_wrap">
-                    <div class="present_cont groom">
+                    <div class="present_cont groom" data-aos="fade-up">
                         <a href="javascript:;" class="present_btn present_btn--link" title="groom's side open">
-                            The Groom's side
-                            <img src="./img/present_btn_arrow.svg" class="present_icon">
+                            신랑측에게
+                            <i class="fa-solid fa-angle-down"></i>
                         </a>
                         <ul class="present_list">
                             <li class="present_item">
                                 <dl class="present_info">
                                     <div>
-                                        <dt class="present_role">groom</dt> 
-                                        <dd class="present_name">Hyukju Lee</dd>
+                                        <dt class="present_role">신랑</dt> 
+                                        <dd class="present_name">이주혁</dd>
                                     </div>
                                     <div>
-                                        <dt class="present_bank">Toss</dt> 
-                                        <dd class="present_num">123-4567-8910</dd>
+                                        <dt class="present_bank">신한은행</dt> 
+                                        <dd class="present_num">110-333-313145</dd>
                                     </div>
                                 </dl>
-                                <button class="present_btn--copy btn--copy" title="groom's side open" data-copy="123-4567-8910">
-                                    <img src="./img/present_btn_copy.svg" class="present_icon--copy">
+                                <button class="present_btn--copy btn--copy" title="groom's side open" data-copy="110-333-313145">
+                                     <i class="fa-regular fa-copy"></i>
                                     복사하기
                                 </button>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
                                     <div>
-                                        <dt class="present_role">father</dt> 
-                                        <dd class="present_name">sugil Lee</dd>
+                                        <dt class="present_role">신랑 아버지</dt> 
+                                        <dd class="present_name">이길수</dd>
                                     </div>
                                     <div>
-                                        <dt class="present_bank">Toss</dt> 
-                                        <dd class="present_num">123-4567-8910</dd>
+                                        <dt class="present_bank">우리은행</dt> 
+                                        <dd class="present_num">1005-802-742322</dd>
                                     </div>
                                 </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
-                                    <img src="./img/present_btn_copy.svg" class="present_icon--copy" >
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1005-802-742322">
+                                     <i class="fa-regular fa-copy"></i>
                                     복사하기
                                 </button>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
                                     <div>
-                                        <dt class="present_role">mother</dt> 
-                                        <dd class="present_name">hwashin kang</dd>
+                                        <dt class="present_role">신랑 어머니</dt> 
+                                        <dd class="present_name">강화신</dd>
                                     </div>
                                     <div>
-                                        <dt class="present_bank">Toss</dt> 
-                                        <dd class="present_num">123-4567-8910</dd>
+                                        <dt class="present_bank">MG새마을금고</dt> 
+                                        <dd class="present_num">9003-2615-1610-7</dd>
                                     </div>
                                 </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
-                                    <img src="./img/present_btn_copy.svg" class="present_icon--copy">
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="9003-2615-1610-7">
+                                     <i class="fa-regular fa-copy"></i>
                                     복사하기
                                 </button>
                             </li>
                         </ul>
                     </div>
-                    <div class="present_cont bride">
+                    <div class="present_cont bride" data-aos="fade-up">
                         <a href="javascript:;" class="present_btn present_btn--link" title="groom's side open">
-                            The bride's side
-                            <img src="./img/present_btn_arrow.svg" class="present_icon">
+                            신부측에게
+                            <i class="fa-solid fa-angle-down"></i>
                         </a>
                         <ul class="present_list">
                             <li class="present_item">
                                 <dl class="present_info">
                                     <div>
-                                        <dt class="present_role">bride</dt> 
-                                        <dd class="present_name">Eunye Lee</dd>
+                                        <dt class="present_role">신부</dt> 
+                                        <dd class="present_name">이예은</dd>
                                     </div>
                                     <div>
-                                        <dt class="present_bank">Toss</dt> 
-                                        <dd class="present_num">123-4567-8910</dd>
+                                        <dt class="present_bank">카카오뱅크</dt> 
+                                        <dd class="present_num">3333-08-255-3756</dd>
                                     </div>
                                 </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
-                                    <img src="./img/present_btn_copy.svg" class="present_icon--copy">
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="3333-08-255-3756">
+                                     <i class="fa-regular fa-copy"></i>
                                     복사하기
                                 </button>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
                                     <div>
-                                        <dt class="present_role">father</dt> 
-                                        <dd class="present_name">Jongsu Lee</dd>
+                                        <dt class="present_role">신부 아버지</dt> 
+                                        <dd class="present_name">이종석</dd>
                                     </div>
                                     <div>
-                                        <dt class="present_bank">Toss</dt> 
-                                        <dd class="present_num">123-4567-8910</dd>
+                                        <dt class="present_bank">우리은행</dt> 
+                                        <dd class="present_num">1002-438-131013</dd>
                                     </div>
                                 </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
-                                    <img src="./img/present_btn_copy.svg" class="present_icon--copy">
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1002-438-131013">
+                                     <i class="fa-regular fa-copy"></i>
                                     복사하기
                                 </button>
                             </li>
                             <li class="present_item">
                                 <dl class="present_info">
                                     <div>
-                                        <dt class="present_role">mother</dt> 
-                                        <dd class="present_name">jaejung che</dd>
+                                        <dt class="present_role">신부 어머니</dt> 
+                                        <dd class="present_name">조재정</dd>
                                     </div>
                                     <div>
-                                        <dt class="present_bank">Toss</dt> 
-                                        <dd class="present_num">123-4567-8910</dd>
+                                        <dt class="present_bank">우리은행</dt> 
+                                        <dd class="present_num">1002-941-811152</dd>
                                     </div>
                                 </dl>
-                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="123-4567-8910">
-                                    <img src="./img/present_btn_copy.svg" class="present_icon--copy">
+                                <button class="present_btn--copy btn--copy" title="복사하기" data-copy="1002-941-811152">
+                                     <i class="fa-regular fa-copy"></i>
                                     복사하기
                                 </button>
                             </li>
@@ -619,14 +660,11 @@
         <section id="section09" class="section section09">
             <div class="inner">
                 <div class="information">
-                    <p class="tit">Information</p>
-                    <p class="desc">
-                        I wrote it down for those who have difficulty attending.<br>
-                        I ask for your understanding with a generous heart.<br>
-                        I wrote it down for those who have difficulty attending.<br>
-                        I ask for your understanding with a generous heart.<br>
-                        I wrote it down for those who have difficulty attending.<br>
-                        I ask for your understanding with a generous heart.
+                    <p class="tit" data-aos="fade-up">Information</p>
+                    <p class="disc" data-aos="fade-up" data-aos-delay="150">
+                        하객들이 많아 주차가 복잡합니다.<br>
+                        예상시간 보다 20-30분 일찍 와주시면<br>
+                        결혼식 축하가 원활합니다. 양해 부탁드립니다. 
                     </p>
                 </div>
             </div>
@@ -651,8 +689,8 @@
     <!-- s: footer -->
     <footer class="footer">
         <div class="footer_btn_wrap">
-            <a href="javascript:;" class="footer_btn btn--link">Share</a>
-            <a href="javascript:;" class="footer_btn btn--copy" data-copy="link Copy">link Copy</a>
+            <a href="javascript:;" class="footer_btn btn--link">카카오톡 공유하기</a>
+            <a href="javascript:;" class="footer_btn btn--copy" data-copy="link Copy">링크 복사하기</a>
             <a 
             href="https://www.google.com/calendar/render?action=TEMPLATE&text=예은%20결혼&dates=20260606T150000/20260606T170000&ctz=Asia/Seoul&location=더파티움안양%207층라포레홀."
             target="_blank" class="footer_btn btn--share">

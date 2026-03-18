@@ -101,6 +101,10 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
+i, em{
+	display: inline-block;
+	font-style: normal;
+}
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';

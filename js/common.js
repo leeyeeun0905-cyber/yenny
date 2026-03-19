@@ -149,6 +149,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     });
 
+    var infoSwiper = new Swiper(".infoSwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+            el: ".infoSwiper .swiper-pagination",
+            clickable: true,
+        },
+    });
+
     //present btn
     $('.present_btn--link').on('click', function() {
         const $presentBtn = $(this);
@@ -194,6 +204,50 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }, false);
 
 
+    // 1. 접속 환경 감지 (모바일 여부)
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const isMo = window.innerWidth < 769;
+    
+    // 2. 목적지 정보 (더파티움 안양 고유 ID 및 좌표)
+    const info = {
+        name: encodeURIComponent("더파티움안양"), // URL 인코딩
+        lat: 37.395123,
+        lng: 126.963695,
+        naverId: "36737525",
+        kakaoId: "17502787"
+    };
+
+    // --- T맵 로직 ---
+    document.getElementById('btn-tmap').addEventListener('click', function() {
+        if (isMobile || isMo) {
+            location.href = "https://tmap.life/2296d997";
+        } else {
+            // PC: T맵 공식 웹 공유 페이지 (가장 안정적)
+            window.open("https://www.tmapmobility.com/service/drive/navigation", "_blank");
+        }
+    });
+
+    // --- 카카오맵 로직 ---
+    document.getElementById('btn-kakaomap').addEventListener('click', function() {
+        if (isMobile || isMo) {
+            // 모바일: 카카오맵 앱 바로 실행 (좌표 기반)
+            location.href = `kakaomap://place?id=${info.kakaoId}`;
+        } else {
+            // PC: 카카오맵 웹 상세 페이지 (ID 기반으로 정확한 핀 노출)
+            window.open(`https://kko.to/fWftcc7Z4V`, "_blank");
+        }
+    });
+
+    // --- 네이버 지도 로직 ---
+    document.getElementById('btn-navermap').addEventListener('click', function() {
+        if (isMobile || isMo) {
+            // 모바일: 네이버 지도 앱 실행
+            location.href = `nmap://place?id=${info.naverId}&name=${info.name}`;
+        } else {
+            // PC: 네이버 지도 웹 상세 페이지
+            window.open(`https://naver.me/FwGVYc2L`, "_blank");
+        }
+    });
 });
 
 

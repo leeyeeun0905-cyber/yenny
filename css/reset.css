@@ -1,66 +1,48 @@
 @font-face {
-	font-family: 'Pretendard';
-	font-weight: 900;
-	font-display: swap;
-	src: local('Pretendard Black'), url(../font/Pretendard-Black.woff2) format('woff2'), url(./woff/Pretendard-Black.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 800;
-	font-display: swap;
-	src: local('Pretendard ExtraBold'), url(../font/Pretendard-ExtraBold.woff2) format('woff2'), url(./woff/Pretendard-ExtraBold.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 700;
-	font-display: swap;
-	src: local('Pretendard Bold'), url(../font/Pretendard-Bold.woff2) format('woff2'), url(./woff/Pretendard-Bold.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 600;
-	font-display: swap;
-	src: local('Pretendard SemiBold'), url(../font/Pretendard-SemiBold.woff2) format('woff2'), url(./woff/Pretendard-SemiBold.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 500;
-	font-display: swap;
-	src: local('Pretendard Medium'), url(../font/Pretendard-Medium.woff2) format('woff2'), url(./woff/Pretendard-Medium.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 400;
-	font-display: swap;
-	src: local('Pretendard Regular'), url(../font/Pretendard-Regular.woff2) format('woff2'), url(./woff/Pretendard-Regular.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 300;
-	font-display: swap;
-	src: local('Pretendard Light'), url(../font/Pretendard-Light.woff2) format('woff2'), url(./woff/Pretendard-Light.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 200;
-	font-display: swap;
-	src: local('Pretendard ExtraLight'), url(../font/Pretendard-ExtraLight.woff2) format('woff2'), url(./woff/Pretendard-ExtraLight.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
+	font-family: 'SUIT';
 	font-weight: 100;
-	font-display: swap;
-	src: local('Pretendard Thin'), url(../font/Pretendard-Thin.woff2) format('woff2'), url(./woff/Pretendard-Thin.woff) format('woff');
+	src: url('./font/SUIT-Thin.woff2') format('woff2');
 }
-
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 200;
+	src: url('./font/SUIT-ExtraLight.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 300;
+	src: url('/font/SUIT-Light.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 400;
+	src: url('/font/SUIT-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 500;
+	src: url('/font/SUIT-Medium.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 600;
+	src: url('/font/SUIT-SemiBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 700;
+	src: url('/font/SUIT-Bold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 800;
+	src: url('/font/SUIT-ExtraBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 900;
+	src: url('/font/SUIT-Heavy.woff2') format('woff2');
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -78,12 +60,12 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-weight: 200;
+	font-weight: 400;
 	vertical-align: baseline;
 }
 a, button {
 	text-decoration: none;
-	color: #000000;
+	color: #444;
 	border: none;
 	cursor: pointer;
 }
@@ -126,7 +108,8 @@ body {
 	max-width: 28rem;
     width: 100%;
     margin: 0 auto;
-    font-family: 'Pretendard';
+    font-family: 'SUIT', sans-serif;
+	font-weight: 400;
 	line-height: 1.3;
 	color: #444;
 	background-color: rgb(221, 230, 204);
@@ -135,7 +118,7 @@ main {
 	margin-top: 0;
 	margin: 0 auto;
 	border-radius: 0 0 0 0;
-	box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.4);
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
 }
 .section {
 	box-sizing: border-box;

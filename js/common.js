@@ -1,4 +1,3 @@
-
 AOS.init({
     duration: 1000, 
     offset: 200,
@@ -7,8 +6,35 @@ AOS.init({
     animatedClassName: 'animated',
 });
 
+// 발급받은 JavaScript 키를 넣으세요
+Kakao.init('afb8b4e66c8a97f2ae053a1f28ba5b9c'); 
+console.log(Kakao.isInitialized()); // 초기화 여부 확인 (true가 나와야 함)
+
 document.addEventListener("DOMContentLoaded", (event) => {
 
+    document.getElementById('kakao-link-btn').onclick = function() {
+        Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '이주혁 ♥ 이예은 결혼식에 초대합니다.',
+                description: '2026.06.06(토) 오후 3:00\n더파티움 안양 7F 라포레홀',
+                imageUrl: 'https://yen2hxxk-wedding.site/img/opengraph.jpg', // 공유 시 보여질 메인 이미지
+                link: {
+                    mobileWebUrl: window.location.href,
+                    webUrl: window.location.href,
+                },
+            },
+            buttons: [
+                {
+                    title: '모바일 청첩장 보기',
+                    link: {
+                        mobileWebUrl: window.location.href,
+                        webUrl: window.location.href,
+                    },
+                },
+            ],
+        });
+    };
 
     //     $('body').css("overflow-y","hidden")
     //     setTimeout(function(){
@@ -18,9 +44,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var sakura = new Sakura('.section01');
     }, 2800);
 
-    const audio = document.getElementById("bgmAudio");
-    const bgmBtn = document.querySelector(".bgm_btn");
-
     // 첫 진입 안내
     window.addEventListener("load", () => {
         $('.toast--music')
@@ -28,33 +51,45 @@ document.addEventListener("DOMContentLoaded", (event) => {
             .delay(1200)
             .fadeOut(200);
     });
+    
 
-    // 1. 자동 재생 시도
+    const audio = document.getElementById("bgmAudio");
+    const bgmBtn = document.querySelector(".bgm_btn");
+
+    // [함수] 재생 상태에 따른 UI 업데이트
+    function setAudioVisual(isPlaying) {
+        if (isPlaying) {
+            bgmBtn.classList.remove("paused"); // EQ 바 보임
+        } else {
+            bgmBtn.classList.add("paused");    // 재생 아이콘 보임
+        }
+    }
+
+
+    // [함수] 재생 시도
     const playAudio = () => {
         audio.play().then(() => {
-            updateUI(true);
+            setAudioVisual(true);
         }).catch(() => {
-            // 자동 재생 막혔을 때의 처리 (UI는 정지 상태)
-            updateUI(false);
+            // 브라우저가 차단한 경우 정지 UI 유지
+            setAudioVisual(false);
         });
     };
 
+    // 1. 페이지 로드 시 즉시 실행 시도 (대부분 브라우저에서 차단됨)
     playAudio();
 
-    // 버튼 클릭 시 재생/정지
-    bgmBtn.addEventListener("click", () => {
+    // 4. 버튼 클릭 시 수동 토글 (직접 클릭은 최우선 순위)
+    bgmBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // 첫 터치 이벤트와 겹치지 않게 방지
         if (audio.paused) {
             audio.play();
-            bgmBtn.classList.remove("paused");
+            setAudioVisual(true);
         } else {
             audio.pause();
-            bgmBtn.classList.add("paused");
+            setAudioVisual(false);
         }
     });
-
-
-
-
 
     // Dday 캘린더
 
@@ -251,50 +286,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }, false);
 
 
-    // 1. 접속 환경 감지 (모바일 여부)
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    const isMo = window.innerWidth <= 769;
-    
-    // 2. 목적지 정보 (더파티움 안양 고유 ID 및 좌표)
-    const info = {
-        name: encodeURIComponent("더파티움안양"), // URL 인코딩
-        lat: 37.395123,
-        lng: 126.963695,
-        naverId: "36737525",
-        kakaoId: "36IqW1Z3me"
-    };
-
-    // --- T맵 로직 ---
-    // document.getElementById('btn-tmap').addEventListener('click', function() {
-    //     if (isMobile || isMo) {
-    //         location.href = "https://tmap.life/2296d997";
-    //     } else {
-    //         // PC: T맵 공식 웹 공유 페이지 (가장 안정적)
-    //         window.open("https://www.tmapmobility.com/service/drive/navigation", "_blank");
-    //     }
-    // });
-
-    // // --- 카카오맵 로직 ---
-    // document.getElementById('btn-kakaomap').addEventListener('click', function() {
-    //     if (isMobile || isMo) {
-    //         // 모바일: 카카오맵 앱 바로 실행 (좌표 기반)
-    //         location.href = `kakaomap://place?id=${info.kakaoId}`;
-    //     } else {
-    //         // PC: 카카오맵 웹 상세 페이지 (ID 기반으로 정확한 핀 노출)
-    //         window.open(`https://kko.to/36IqW1Z3me`, "_blank");
-    //     }
-    // });
-
-    // --- 네이버 지도 로직 ---
-    // document.getElementById('btn-navermap').addEventListener('click', function() {
-    //     if (isMobile || isMo) {
-    //         // 모바일: 네이버 지도 앱 실행
-    //         location.href = `nmap://place?id=${info.naverId}&name=${info.name}`;
-    //     } else {
-    //         // PC: 네이버 지도 웹 상세 페이지
-    //         window.open(`https://naver.me/FwGVYc2L`, "_blank");
-    //     }
-    // });
 });
 
 

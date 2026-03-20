@@ -767,6 +767,7 @@ header {
     font-size: 1rem;
     background-color:rgb(255 255 255 / 80%);
     border-radius: 8px;
+    box-shadow: 2px 2px 8px rgb(188 204 170 / 22%);
 }
 .section07 .btn_wrap02 .location_btn .btn_icon {
     width: 1.2rem;

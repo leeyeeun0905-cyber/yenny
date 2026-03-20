@@ -36,53 +36,53 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     };
 
-    $('body').css("overflow-y","hidden")
-    setTimeout(function(){
-        $('body').css("overflow-y","initial")
-    }, 3000)
-
-    setTimeout(function(){
-        var sakura = new Sakura('.section01');
-    }, 2800);
-
     const audio = document.getElementById('bgmAudio');
     const bgmBtn = document.querySelector('.bgm_btn');
 
-    // [함수] 재생 상태에 따른 UI 업데이트
+    // --- [1] 스크롤 차단 로직 ---
+    function preventDefault(e) {
+        e.preventDefault();
+    }
+
+    // 초기 잠금
+    $('body').css("overflow", "hidden");
+    window.addEventListener('touchmove', preventDefault, { passive: false });
+
+    // 3.2초 후 해제
+    setTimeout(function() {
+        $('body').css("overflow", "initial");
+        window.removeEventListener('touchmove', preventDefault);
+        console.log("Scroll unlocked");
+    }, 3000);
+
+
+    // --- [2] 배경음악 로직 ---
     function setAudioVisual(isPlaying) {
         if (isPlaying) {
-            bgmBtn.classList.remove("paused"); // EQ 바 보임
+            bgmBtn.classList.remove("paused");
         } else {
-            bgmBtn.classList.add("paused");    // 재생 아이콘 보임
+            bgmBtn.classList.add("paused");
         }
     }
 
-    // [함수] 재생 시도
     const playAudio = () => {
         audio.play().then(() => {
             setAudioVisual(true);
-            // 재생 성공 시 첫 터치 이벤트들 제거
             removeInteractionListeners();
         }).catch(() => {
-            // 브라우저가 차단한 경우 정지 UI 유지
             setAudioVisual(false);
         });
     };
 
-    // 1. 페이지 로드 시 즉시 실행 시도 (대부분 브라우저에서 차단됨)
+    // 첫 진입 시도 및 토스트 안내
     playAudio();
-
-    // 2. 토스트 메시지 안내 (이미 작성하신 코드 유지)
     $('.toast--music').fadeIn(200).delay(1200).fadeOut(200);
 
-    // 3. 브라우저 정책 대응: 사용자가 화면을 처음 건드리는 순간 무조건 재생
     const playOnFirstInteraction = () => {
-        if (audio.paused) {
-            playAudio();
-        }
+        if (audio.paused) playAudio();
     };
 
-    // 여러 상호작용에 리스너 등록
+    // 인터랙션 리스너 등록
     document.addEventListener('click', playOnFirstInteraction);
     document.addEventListener('touchstart', playOnFirstInteraction);
     document.addEventListener('scroll', playOnFirstInteraction);
@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.removeEventListener('scroll', playOnFirstInteraction);
     }
 
-    // 4. 버튼 클릭 시 수동 토글 (직접 클릭은 최우선 순위)
+    // 버튼 수동 토글
     bgmBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // 첫 터치 이벤트와 겹치지 않게 방지
+        e.stopPropagation(); 
         if (audio.paused) {
             audio.play();
             setAudioVisual(true);

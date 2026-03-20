@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const isSunday = (day + firstDay) % 7 === 1;
 
         // 클래스 설정: 웨딩데이면 today, 일요일이면 red 추가
-        let className = "";
+        let className = "num";
         if (isWeddingDay) className = "today";
         if (isSunday) className += " red"; // 기존 클래스가 있을 수 있으니 한 칸 띄고 추가
 
@@ -151,7 +151,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     var infoSwiper = new Swiper(".infoSwiper", {
         slidesPerView: "auto",
-        spaceBetween: 30,
         centeredSlides: true,
         pagination: {
             el: ".infoSwiper .swiper-pagination",
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const textToCopy = $(this).data('copy');
 
         navigator.clipboard.writeText(textToCopy).then(() => {
-            $('.toast')
+            $('.toast--copy')
                 .fadeIn(200)
                 .delay(1200)
                 .fadeOut(200);
@@ -206,7 +205,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // 1. 접속 환경 감지 (모바일 여부)
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    const isMo = window.innerWidth < 769;
+    const isMo = window.innerWidth <= 769;
     
     // 2. 목적지 정보 (더파티움 안양 고유 ID 및 좌표)
     const info = {
@@ -214,40 +213,40 @@ document.addEventListener("DOMContentLoaded", (event) => {
         lat: 37.395123,
         lng: 126.963695,
         naverId: "36737525",
-        kakaoId: "17502787"
+        kakaoId: "36IqW1Z3me"
     };
 
     // --- T맵 로직 ---
-    document.getElementById('btn-tmap').addEventListener('click', function() {
-        if (isMobile || isMo) {
-            location.href = "https://tmap.life/2296d997";
-        } else {
-            // PC: T맵 공식 웹 공유 페이지 (가장 안정적)
-            window.open("https://www.tmapmobility.com/service/drive/navigation", "_blank");
-        }
-    });
+    // document.getElementById('btn-tmap').addEventListener('click', function() {
+    //     if (isMobile || isMo) {
+    //         location.href = "https://tmap.life/2296d997";
+    //     } else {
+    //         // PC: T맵 공식 웹 공유 페이지 (가장 안정적)
+    //         window.open("https://www.tmapmobility.com/service/drive/navigation", "_blank");
+    //     }
+    // });
 
-    // --- 카카오맵 로직 ---
-    document.getElementById('btn-kakaomap').addEventListener('click', function() {
-        if (isMobile || isMo) {
-            // 모바일: 카카오맵 앱 바로 실행 (좌표 기반)
-            location.href = `kakaomap://place?id=${info.kakaoId}`;
-        } else {
-            // PC: 카카오맵 웹 상세 페이지 (ID 기반으로 정확한 핀 노출)
-            window.open(`https://kko.to/fWftcc7Z4V`, "_blank");
-        }
-    });
+    // // --- 카카오맵 로직 ---
+    // document.getElementById('btn-kakaomap').addEventListener('click', function() {
+    //     if (isMobile || isMo) {
+    //         // 모바일: 카카오맵 앱 바로 실행 (좌표 기반)
+    //         location.href = `kakaomap://place?id=${info.kakaoId}`;
+    //     } else {
+    //         // PC: 카카오맵 웹 상세 페이지 (ID 기반으로 정확한 핀 노출)
+    //         window.open(`https://kko.to/36IqW1Z3me`, "_blank");
+    //     }
+    // });
 
     // --- 네이버 지도 로직 ---
-    document.getElementById('btn-navermap').addEventListener('click', function() {
-        if (isMobile || isMo) {
-            // 모바일: 네이버 지도 앱 실행
-            location.href = `nmap://place?id=${info.naverId}&name=${info.name}`;
-        } else {
-            // PC: 네이버 지도 웹 상세 페이지
-            window.open(`https://naver.me/FwGVYc2L`, "_blank");
-        }
-    });
+    // document.getElementById('btn-navermap').addEventListener('click', function() {
+    //     if (isMobile || isMo) {
+    //         // 모바일: 네이버 지도 앱 실행
+    //         location.href = `nmap://place?id=${info.naverId}&name=${info.name}`;
+    //     } else {
+    //         // PC: 네이버 지도 웹 상세 페이지
+    //         window.open(`https://naver.me/FwGVYc2L`, "_blank");
+    //     }
+    // });
 });
 
 

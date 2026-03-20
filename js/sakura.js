@@ -39,17 +39,17 @@ var Sakura = function Sakura(selector, options) {
     // Classname of the petal. This corresponds with the css.
     fallSpeed: 1.2,
     // Speed factor in which the petal falls (higher is slower).
-    maxSize: 11,
+    maxSize: 8.5,
     // The maximum size of the petal.
-    minSize: 8,
+    minSize: 7,
     // The minimum size of the petal.
     delay: 320,
     // Delay between petals.
     colors: [{
       // You can add multiple colors (chosen randomly) by adding elements to the array.
-      gradientColorStart: 'rgba(253, 247, 248, 0.9)',
+      gradientColorStart: 'rgba(247, 246, 246, 1)',
       // Gradient color start (rgba).
-      gradientColorEnd: 'rgba(255, 244, 247, 0.9)',
+      gradientColorEnd: 'rgba(155, 131, 137, 0.9)',
       // Gradient color end (rgba).
       gradientColorDegree: 120 // Gradient degree angle.
 

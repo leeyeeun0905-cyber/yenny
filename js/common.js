@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             content: {
                 title: '이주혁 ♥ 이예은 결혼식에 초대합니다.',
                 description: '2026.06.06(토) 오후 3:00\n더파티움 안양 7F 라포레홀',
-                imageUrl: 'https://yen2hxxk-wedding.site/img/opengraph.jpg', // 공유 시 보여질 메인 이미지
+                imageUrl: 'https://yen2hxxk-wedding.site/img/opengraph01.jpg', // 공유 시 보여질 메인 이미지
                 link: {
                     mobileWebUrl: window.location.href,
                     webUrl: window.location.href,

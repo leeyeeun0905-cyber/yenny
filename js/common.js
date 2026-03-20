@@ -176,14 +176,62 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     $('.btn--copy').on('click', function () {
         const textToCopy = $(this).data('copy');
-
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            $('.toast--copy')
-                .fadeIn(200)
-                .delay(1200)
-                .fadeOut(200);
-        });
+    
+        // 복사 함수 실행
+        copyToClipboard(textToCopy);
     });
+
+    function copyToClipboard(val) {
+        // 1. 최신 navigator.clipboard API 시도
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(val).then(() => {
+                showToast();
+            }).catch(err => {
+                // 실패 시 구식 방식으로 재시도
+                fallbackCopyTextToClipboard(val);
+            });
+        } else {
+            // 2. 보안 환경이 아니거나 API가 없는 경우 구식 방식 실행
+            fallbackCopyTextToClipboard(val);
+        }
+    }
+    
+    function fallbackCopyTextToClipboard(text) {
+        // 보이지 않는 textarea를 만들어 텍스트를 복사하는 전통적인 방식
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        
+        // 모바일에서 화면이 튀지 않게 설정
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+    
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+    
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showToast();
+            } else {
+                alert('복사에 실패했습니다. 직접 복사해 주세요.');
+            }
+        } catch (err) {
+            alert('이 브라우저에서는 복사 기능을 지원하지 않습니다.');
+        }
+    
+        document.body.removeChild(textArea);
+    }
+    
+    function showToast() {
+        $('.toast--copy')
+            .stop(true, true) // 연속 클릭 대응
+            .fadeIn(200)
+            .delay(1200)
+            .fadeOut(200);
+    }
 
     // 두 손가락으로 벌리는 제스처(Pinch Zoom) 방지
     document.addEventListener('touchstart', function (event) {

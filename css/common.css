@@ -263,8 +263,7 @@ header {
     width: 100%;
     height: 30rem;
     margin: 5.25rem 0 8rem;
-    background-image: url('../img/section02.jpg');
-    background-attachment: scroll;
+    background-image: url('/img/section02.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -829,6 +828,9 @@ header {
     position: relative;
     padding: 9.25rem 0 6.25rem;
     background-color: #fff;
+}
+.section08 .disc {
+    line-height: 1.6;
 }
 .section08::before {
     content: "";

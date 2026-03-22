@@ -1074,6 +1074,14 @@ header {
     color: #fff;
     background-color: #a0b575;
 }
+.footer .footer_btn.btn--flower {
+    margin-top: 3rem;
+    width: 60%;
+    min-width: 240px;
+    color: #888;
+    background-color: #fff;
+    border: 1px solid #888;
+}
 .footer .footer_btn.btn--copy i {
     font-size: 1rem;
 }
@@ -1097,6 +1105,10 @@ header {
 .footer .footer_box i {
     display: inline-block;
     margin-top: 1rem;
+    font-family: 'Jeju Myeongjo';
+    /* font-family: "Playfair Display", serif; */
+    /* font-family: 'Castoro Titling'; */
+    /* font-family: "Noto Serif Display", serif; */
     font-size: 0.9rem;
     color: #888;
 }

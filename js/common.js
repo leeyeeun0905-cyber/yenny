@@ -5,6 +5,9 @@ AOS.init({
     // initClassName: true,
     animatedClassName: 'animated',
 });
+setTimeout(function(){
+    var sakura = new Sakura('.section01');
+}, 2800);
 
 // 발급받은 JavaScript 키를 넣으세요
 Kakao.init('afb8b4e66c8a97f2ae053a1f28ba5b9c'); 
@@ -205,6 +208,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             el: ".infoSwiper .swiper-pagination",
             clickable: true,
         },
+        // autoplay: {
+        //     delay: 3000,
+        // },
     });
 
     //present btn

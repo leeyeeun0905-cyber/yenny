@@ -327,7 +327,7 @@ header {
     color: #444;
 }
 .section02 .calendar_sub-date.en {
-    margin: 0.7rem 0 3rem;
+    margin: 0.7rem 0 2rem;
     /* font-family: 'Jeju Myeongjo'; */
     /* font-family: "Playfair Display", serif; */
     /* font-family: 'Castoro Titling'; */
@@ -342,6 +342,13 @@ header {
     margin: 18px 0;
 }
 */
+.section02 .calendar_month {
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    color: rgb(160, 181, 117, 1);
+
+}
 .section02 .calendar_table {
     position: relative;
     display: table;
@@ -966,7 +973,7 @@ header {
     overflow: initial !important;
 }
 .section09 .infoSwiper .info_item {
-    min-height: 27rem;
+    min-height: 28rem;
     margin-right: 2rem;
     padding: 2rem;
     background-color: #fff;

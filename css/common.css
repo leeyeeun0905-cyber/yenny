@@ -674,15 +674,17 @@ header {
 }
 .section06_modal .modal_close_btn {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 1.25rem;
+    top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.5rem;
-    font-size: 1.5rem;
+    width: 1.7rem;
     background: transparent;
     opacity: 0.6;
+}
+.section06_modal .modal_close_btn i {
+    font-size: 1.7rem;
 }
 .section06_modal .modal_control_box {
     position: absolute;
@@ -695,13 +697,18 @@ header {
 .section06_modal .modal_control_box .swiper-button-prev {
     z-index: 11;
     top: 50%;
+    /* height: 1rem; */
     margin-top: 0;
     color: #444444;
     transform: translateY(-50%);
 }
 .section06_modal .modal_control_box .swiper-button-next svg,
 .section06_modal .modal_control_box .swiper-button-prev svg {
-    height: 1.3rem;
+    display: none;
+}
+.section06_modal .modal_control_box .swiper-button-next::after,
+.section06_modal .modal_control_box .swiper-button-prev::after {
+    font-size: 1.7rem;
 }
 .section06_modal .swiper-pagination {
     top: 50%;

@@ -142,9 +142,6 @@ header {
     transform: translateX(-50%);
 }
 .section01 .title {
-    /* font-family: 'WindSong';
-    font-size: 6.81rem;
-    color: #FAED87; */
     opacity: 0.8;
     margin-top: 90px;
     margin-left: -63px;
@@ -328,10 +325,6 @@ header {
 }
 .section02 .calendar_sub-date.en {
     margin: 0.7rem 0 2rem;
-    /* font-family: 'Jeju Myeongjo'; */
-    /* font-family: "Playfair Display", serif; */
-    /* font-family: 'Castoro Titling'; */
-    /* font-family: "Noto Serif Display", serif; */
     font-size: 1.125rem;
     text-transform: none;
     color: #999;
@@ -1113,9 +1106,6 @@ header {
     display: inline-block;
     margin-top: 1rem;
     font-family: 'Jeju Myeongjo';
-    /* font-family: "Playfair Display", serif; */
-    /* font-family: 'Castoro Titling'; */
-    /* font-family: "Noto Serif Display", serif; */
     font-size: 0.9rem;
     color: #888;
 }

@@ -667,8 +667,8 @@ header {
 }
 .section06_modal .modal_close_btn {
     position: absolute;
-    right: 1.25rem;
-    top: 2rem;
+    right: 24px;
+    top: 2%;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -242,24 +242,52 @@ header {
 }
 
 .section02 .desc {
+    margin-bottom: 3rem;
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 .section02 .inner {
     padding: 0 0;
 }
+.section02 hr {
+    display: inline-block;
+    width: 3rem;
+    height: 1px;
+    border: 0;
+    background: #ccc;
+}
 .section02 .name {
-    margin-top: 50px;
-    font-size: 1.1rem;
+    position: relative;
+    padding-top: 3rem;
+    font-size: 1.07rem;
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.9;
     color: #222;
+}
+
+/* .section02 .name::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 0;
+    width: 3rem;
+    height: 1px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+} */
+.section02 .name span {
+    font-size: 0.98rem;
+    color: #666;
+}
+.section02 .name span i {
+    display: inline-block;
+    width: 2rem;
 }
 .section02 .img_box {
     position: relative;
     width: 100%;
     height: 30rem;
-    margin: 5.25rem 0 8rem;
+    margin: 6.25rem 0 8rem;
     background-image: url('../img/section02.webp');
     background-size: cover;
     background-position: center center;
@@ -1153,6 +1181,15 @@ header {
     }
     .section02 .desc {
         font-size: 1rem;
+    }
+    .section02 .name {
+        font-size: 0.98rem;
+    }
+    .section02 .name span {
+        font-size: 0.89rem;
+    }
+    .section02 .name span i {
+        width: 1.7rem;
     }
     .section02 .calendar_sub-date,
     .calendar_dday {

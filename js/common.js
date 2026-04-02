@@ -306,6 +306,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }, false);
 
     $('#addToGoogleCalendar').on('click', function() {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         const title = encodeURIComponent("주혁♥예은 결혼식");
         const location = encodeURIComponent("더파티움 안양 7F 라포레홀");
         const details = encodeURIComponent("두 사람의 소중한 시작을 함께 축복해 주세요. ✨");
@@ -317,7 +318,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
 
-        window.open(calendarUrl, '_blank');
+        if (isMobile) {
+                // 모바일은 현재 창에서 전환 (새 하얀 창 방지)
+                location.href = calendarUrl;
+            } else {
+                // PC는 새 탭에서 열기
+                window.open(calendarUrl, '_blank');
+        }
     });
 
 });

@@ -1113,7 +1113,7 @@ header {
     width: 50%;
     min-width: 240px;
     color: #888;
-    /* border: 1px solid #888; */
+    background-color: #f0f0f0;
 }
 .footer .footer_btn.btn--flower {
     width: 60%;

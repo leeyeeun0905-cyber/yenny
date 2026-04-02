@@ -1102,8 +1102,20 @@ header {
     color: #fff;
     background-color: #a0b575;
 }
-.footer .footer_btn.btn--flower {
+.footer_btn_wrap > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.footer .footer_btn.btn--calendar {
     margin-top: 3rem;
+    width: 50%;
+    min-width: 240px;
+    color: #888;
+    /* border: 1px solid #888; */
+}
+.footer .footer_btn.btn--flower {
     width: 60%;
     min-width: 240px;
     color: #888;

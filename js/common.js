@@ -305,6 +305,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     lastTouchEnd = now;
     }, false);
 
+    $('#addToGoogleCalendar').on('click', function() {
+        const title = encodeURIComponent("주혁♥예은 결혼식");
+        const location = encodeURIComponent("더파티움 안양 7F 라포레홀");
+        const details = encodeURIComponent("두 사람의 소중한 시작을 함께 축복해 주세요. ✨");
+
+        // 시작: 2026년 6월 6일 오후 3시 (KST) -> UTC 기준으로는 오전 6시 (3 - 9 = 06)
+        // 종료: 2026년 6월 6일 오후 5시 (KST) -> UTC 기준으로는 오전 8시 (5 - 9 = 08)
+        const startDate = "20260606T060000Z"; 
+        const endDate = "20260606T080000Z";
+
+        const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+
+        window.open(calendarUrl, '_blank');
+    });
 
 });
 
